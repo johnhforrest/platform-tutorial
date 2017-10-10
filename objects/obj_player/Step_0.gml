@@ -57,3 +57,30 @@ if (place_meeting(x, y + verticalSpeed, obj_wall))
 }
 
 y += verticalSpeed;
+
+// Animating the player
+if (!place_meeting(x, y + 1, obj_wall))
+{
+	sprite_index = spr_player_jump;
+	
+	// Don't loop the animation, we'll pick the index manually based on whether we are going up or down
+	image_speed = 0;
+	image_index = sign(verticalSpeed) ? 0 : 1;
+}
+else
+{
+	image_speed = 1;
+	if (horizontalSpeed == 0)
+	{
+		sprite_index = spr_player;
+	}
+	else
+	{
+		sprite_index = spr_player_running;
+	}
+}
+
+if (horizontalSpeed != 0)
+{
+	image_xscale = sign(horizontalSpeed);
+}
