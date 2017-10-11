@@ -1,9 +1,16 @@
 // Get player input
-var horizontalAxis = gamepad_axis_value(0, gp_axislh);
+key_jump = gamepad_button_check_pressed(0, gp_face1);
 
-key_left = gamepad_button_check(0, gp_padl) || keyboard_check(vk_left) || horizontalAxis < -0.5;
-key_right = gamepad_button_check(0, gp_padr) || keyboard_check(vk_right) || horizontalAxis > 0.5;
-key_jump = gamepad_button_check_pressed(0, gp_face1) || keyboard_check_pressed(vk_space);
+if (abs(gamepad_axis_value(0, gp_axislh)) > 0.4)
+{
+	key_left = abs(min(gamepad_axis_value(0, gp_axislh), 0));
+	key_right = max(gamepad_axis_value(0, gp_axislh), 0);
+}
+else
+{
+	key_left = 0;
+	key_right = 0;
+}
 
 // Calculate horizontal movement
 var move = key_right - key_left;
