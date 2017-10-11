@@ -1,41 +1,31 @@
 {
-    "id": "a4148616-9651-45b6-86b3-bdb330216ba1",
+    "id": "73f7e05c-1ddb-4062-a28e-1a5ec2aab6d6",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_player",
+    "name": "obj_enemy",
     "eventList": [
         {
-            "id": "36acb3b2-a4f3-4ad1-a84f-1531419e1ddb",
+            "id": "ef36684a-bb34-4a40-ab6a-4e4c3dc4d018",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
-            "m_owner": "a4148616-9651-45b6-86b3-bdb330216ba1"
+            "m_owner": "73f7e05c-1ddb-4062-a28e-1a5ec2aab6d6"
         },
         {
-            "id": "0b72ea0e-ee2a-45f2-a108-5e467a92e5f2",
+            "id": "e18330b4-75ae-4beb-b750-243a1ba8ae34",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 3,
-            "m_owner": "a4148616-9651-45b6-86b3-bdb330216ba1"
-        },
-        {
-            "id": "fc8a5614-c18e-4c2f-9bd9-a95adb058922",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 82,
-            "eventtype": 9,
-            "m_owner": "a4148616-9651-45b6-86b3-bdb330216ba1"
+            "m_owner": "73f7e05c-1ddb-4062-a28e-1a5ec2aab6d6"
         }
     ],
-    "maskSpriteId": "7cba8257-e729-46f6-a8f5-94158c8f47f2",
+    "maskSpriteId": "32bd4a95-b2b8-4380-999a-d117894a59e4",
     "parentObjectId": "00000000-0000-0000-0000-000000000000",
     "persistent": false,
     "physicsAngularDamping": 0.1,
@@ -51,6 +41,6 @@
     "physicsShapePoints": null,
     "physicsStartAwake": true,
     "solid": false,
-    "spriteId": "7cba8257-e729-46f6-a8f5-94158c8f47f2",
+    "spriteId": "32bd4a95-b2b8-4380-999a-d117894a59e4",
     "visible": true
 }

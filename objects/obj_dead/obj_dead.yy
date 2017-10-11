@@ -1,41 +1,31 @@
 {
-    "id": "a4148616-9651-45b6-86b3-bdb330216ba1",
+    "id": "79efacee-2ee5-44fd-8adc-b64044be03d4",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_player",
+    "name": "obj_dead",
     "eventList": [
         {
-            "id": "36acb3b2-a4f3-4ad1-a84f-1531419e1ddb",
+            "id": "2d9b0fc2-314d-4eac-b78e-07a392564f4c",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
-            "m_owner": "a4148616-9651-45b6-86b3-bdb330216ba1"
+            "m_owner": "79efacee-2ee5-44fd-8adc-b64044be03d4"
         },
         {
-            "id": "0b72ea0e-ee2a-45f2-a108-5e467a92e5f2",
+            "id": "6175c6fc-d71c-4917-8071-e5348a20468e",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 3,
-            "m_owner": "a4148616-9651-45b6-86b3-bdb330216ba1"
-        },
-        {
-            "id": "fc8a5614-c18e-4c2f-9bd9-a95adb058922",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 82,
-            "eventtype": 9,
-            "m_owner": "a4148616-9651-45b6-86b3-bdb330216ba1"
+            "m_owner": "79efacee-2ee5-44fd-8adc-b64044be03d4"
         }
     ],
-    "maskSpriteId": "7cba8257-e729-46f6-a8f5-94158c8f47f2",
+    "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "parentObjectId": "00000000-0000-0000-0000-000000000000",
     "persistent": false,
     "physicsAngularDamping": 0.1,
@@ -51,6 +41,6 @@
     "physicsShapePoints": null,
     "physicsStartAwake": true,
     "solid": false,
-    "spriteId": "7cba8257-e729-46f6-a8f5-94158c8f47f2",
+    "spriteId": "2404681c-1825-4790-9bfb-3942ae90c465",
     "visible": true
 }
