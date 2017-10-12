@@ -4,6 +4,6 @@ selfGravity = 0.5;
 walkSpeed = 2;
 
 
-hitPoints = 4;
+hitPoints = 2;
 flash = 0;
 hitFrom = 0;

@@ -22,13 +22,13 @@ verticalSpeed += selfGravity;
 // Detecting jump
 if (doubleJumpAvailable && key_jump)
 {
-	verticalSpeed = -7;
+	verticalSpeed = jumpHeight;
 	doubleJumpAvailable = false;
 }
 
 if (place_meeting(x, y + 1, obj_wall) && key_jump)
 {
-	verticalSpeed = -7;
+	verticalSpeed = jumpHeight;
 	doubleJumpAvailable = true;
 }
 
