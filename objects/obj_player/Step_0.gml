@@ -14,59 +14,75 @@ else
 
 // Calculate horizontal movement
 var move = key_right - key_left;
-horizontalSpeed = move * walkSpeed;
+horizontalSpeed = round(move * walkSpeed);
 
 // Calculate vertical movement
 verticalSpeed += selfGravity;
+if (timer)
+{
+	verticalSpeed += selfGravity;
+	timer = false;
+}
+else
+{
+	verticalSpeed -= selfGravity;
+	timer = true;
+}
 
-// Detecting jump
 if (doubleJumpAvailable && key_jump)
 {
 	verticalSpeed = jumpHeight;
 	doubleJumpAvailable = false;
 }
 
-if (place_meeting(x, y + 1, obj_wall) && key_jump)
+var onTheGround = (tilemap_get_at_pixel(tileMap, bbox_right, bbox_bottom + 1) != 0) || (tilemap_get_at_pixel(tileMap, bbox_left, bbox_bottom + 1) != 0);
+if (onTheGround)
 {
-	verticalSpeed = jumpHeight;
-	doubleJumpAvailable = true;
+	if (key_jump)
+	{
+		verticalSpeed = jumpHeight;
+		doubleJumpAvailable = true;
+		onTheGround = false;
+	}
+	else
+	{
+		verticalSpeed = 0;
+	}
 }
 
-// Detecting horizontal collision before it happens
-if (place_meeting(x + horizontalSpeed, y, obj_wall))
+// Detecting a horizontal collision with the wall tiles
+var boundingBoxOffset = (horizontalSpeed > 0 ? bbox_right : bbox_left) + horizontalSpeed;
+if ((tilemap_get_at_pixel(tileMap, boundingBoxOffset, bbox_top) != 0) || (tilemap_get_at_pixel(tileMap, boundingBoxOffset, bbox_bottom) != 0))
 {
-	// Closing the gap between the player in the wall
-	// This is required because the walkSpeed is greater than 1
-	while (!place_meeting(x + sign(horizontalSpeed), y, obj_wall))
-	{
-		x += sign(horizontalSpeed);
-	}
+	// if we have a collision, snap to the 32x32 grid (i.e., close the remaining distance to the wall but not over)
+	x = horizontalSpeed > 0
+		? x - (x % 32) + 31 - (bbox_right - x)
+		: x - (x % 32) - (bbox_left - x);
 	
-	// Now that we've detected a collision, stop the player from moving forward
 	horizontalSpeed = 0;
 }
 
-x += horizontalSpeed;
-
-// Detecting vertical collision before it happens
-if (place_meeting(x, y + verticalSpeed, obj_wall))
+// Detecting a vertical collision with the wall tiles
+if (!onTheGround)
 {
-	// Closing the gap between the player in the wall
-	// This is required because the walkSpeed is greater than 1
-	while (!place_meeting(x, y + sign(verticalSpeed), obj_wall))
+	boundingBoxOffset = (verticalSpeed > 0 ? bbox_bottom : bbox_top) + verticalSpeed;
+	if ((tilemap_get_at_pixel(tileMap, bbox_left, boundingBoxOffset) != 0) || (tilemap_get_at_pixel(tileMap, bbox_right, boundingBoxOffset) != 0))
 	{
-		y += sign(verticalSpeed);
-	}
+		// if we have a collision, snap to the 32x32 grid (i.e., close the remaining distance to the wall but not over)
+		y = verticalSpeed > 0
+			? y - (y % 32) + 31 - (bbox_bottom - y)
+			: y - (y % 32) - (bbox_top - y);
 	
-	// Now that we've detected a collision, stop the player from moving forward
-	verticalSpeed = 0;
-	doubleJumpAvailable = false;
+		verticalSpeed = 0;
+	}
 }
 
+x += horizontalSpeed;
 y += verticalSpeed;
 
+/*
 // Animating the player
-if (!place_meeting(x, y + 1, obj_wall))
+if (!onTheGround)
 {
 	sprite_index = spr_player_jump;
 	
@@ -90,4 +106,4 @@ else
 if (horizontalSpeed != 0)
 {
 	image_xscale = sign(horizontalSpeed);
-}
+}*/
