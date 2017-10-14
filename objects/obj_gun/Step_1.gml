@@ -6,27 +6,42 @@ key_up = verticalAxis < -0.5;
 key_down = verticalAxis > 0.5;
 key_fire = gamepad_button_check(0, gp_shoulderrb) || gamepad_button_check(0, gp_face3);
 
-// TODO: point direction isn't needed here because it's only 4 possible angles
-// this will also make the bullet collision logic easier because it's never moving diagonally
-if (key_up)
+if (obj_player.image_xscale == 1)
 {
-	image_angle = point_direction(x, y, x, y - image_xscale);
-}
-else if (key_down)
-{
-	image_angle = point_direction(x, y, x, y + image_xscale);
+	image_xscale = 1;
+	image_yscale = 1;
+	
+	if (key_up)
+	{
+		image_angle = 90;
+	}
+	else if (key_down)
+	{
+		image_angle = 270;
+	}
+	else
+	{
+		image_angle = 0;
+	}
 }
 else
 {
-	if (obj_player.image_xscale == 1)
+	image_yscale = -1;
+	
+	if (key_up)
 	{
-		image_angle = 0;
-		image_yscale = 1;
+		image_angle = 270;
+		image_xscale = -1;
+	}
+	else if (key_down)
+	{
+		image_angle = 90;
+		image_xscale = -1;
 	}
 	else
 	{
 		image_angle = 180;
-		image_yscale = -1;
+		image_xscale = 1;
 	}
 }
 
@@ -47,7 +62,7 @@ if (key_fire && cooldown <= 0)
 	with (instance_create_layer(x, y, "Bullets", obj_bullet))
 	{
 		speed = 8;
-		direction = other.image_angle;		
+		direction = other.image_angle * other.image_yscale;		
 		image_angle = direction;
 	}
 }
