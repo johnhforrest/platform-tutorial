@@ -154,7 +154,7 @@
             "Key": "542952ef-9cf9-4442-b84b-f371c99d523d",
             "Value": {
                 "id": "ddb15d4c-abf3-4f6d-b2bf-53de55f5ff6b",
-                "resourcePath": "scripts\\script0\\script0.yy",
+                "resourcePath": "scripts\\scr_movement\\scr_movement.yy",
                 "resourceType": "GMScript"
             }
         },

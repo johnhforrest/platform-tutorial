@@ -1,4 +1,1 @@
-if (place_meeting(x, y, obj_wall))
-{
-	instance_destroy();
-}
+//scr_movement(object_index);

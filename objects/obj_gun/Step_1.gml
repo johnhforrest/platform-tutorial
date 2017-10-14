@@ -6,6 +6,8 @@ key_up = verticalAxis < -0.5;
 key_down = verticalAxis > 0.5;
 key_fire = gamepad_button_check(0, gp_shoulderrb) || gamepad_button_check(0, gp_face3);
 
+// TODO: point direction isn't needed here because it's only 4 possible angles
+// this will also make the bullet collision logic easier because it's never moving diagonally
 if (key_up)
 {
 	image_angle = point_direction(x, y, x, y - image_xscale);
