@@ -143,6 +143,22 @@
             }
         },
         {
+            "Key": "50b1e814-006d-44eb-8def-1e30151e3921",
+            "Value": {
+                "id": "7f5b76ae-229f-448e-bdee-9164d6256fc7",
+                "resourcePath": "tilesets\\til_wall\\til_wall.yy",
+                "resourceType": "GMTileSet"
+            }
+        },
+        {
+            "Key": "542952ef-9cf9-4442-b84b-f371c99d523d",
+            "Value": {
+                "id": "ddb15d4c-abf3-4f6d-b2bf-53de55f5ff6b",
+                "resourcePath": "scripts\\scr_movement\\scr_movement.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "60821e34-0655-42e0-8d0a-3d93c0bf393e",
             "Value": {
                 "id": "ac7da1d9-29b0-49c5-b88a-92469761378f",
@@ -223,6 +239,14 @@
             }
         },
         {
+            "Key": "80247e8b-948f-45d2-9997-d2dd53ba4549",
+            "Value": {
+                "id": "6c535663-e797-4a87-a850-ae74c6ac00d7",
+                "resourcePath": "sprites\\spr_placeholder\\spr_placeholder.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "86714515-aac1-4985-8bdf-67befe925e14",
             "Value": {
                 "id": "9ed484b5-ddbc-4121-9b3b-7933d934e600",
@@ -239,27 +263,19 @@
             }
         },
         {
+            "Key": "8e9f93a5-6600-4b93-a12e-bd2513a63029",
+            "Value": {
+                "id": "9e7bc9f0-4a5c-4d32-8d29-6750529b3f46",
+                "resourcePath": "sprites\\spr_wall\\spr_wall.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "95d89c13-3a33-4cc4-b495-ea5deca7d19c",
             "Value": {
                 "id": "b1b47473-34d4-4039-abce-39b503eeac7f",
                 "resourcePath": "rooms\\room_two\\room_two.yy",
                 "resourceType": "GMRoom"
-            }
-        },
-        {
-            "Key": "965d67f8-1a1b-4a07-8f70-d367336762ac",
-            "Value": {
-                "id": "ed203abf-9302-4902-a86c-588111e2edbf",
-                "resourcePath": "objects\\obj_wall\\obj_wall.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
-            "Key": "a36b7742-0e1b-46ae-a426-5c4b9e4e284a",
-            "Value": {
-                "id": "1e2a7579-4197-4d10-be3c-a2314ec9b3a7",
-                "resourcePath": "sprites\\spr_wall\\spr_wall.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
@@ -344,7 +360,7 @@
         }
     ],
     "script_order": [
-        
+        "542952ef-9cf9-4442-b84b-f371c99d523d"
     ],
     "tutorial": ""
 }
