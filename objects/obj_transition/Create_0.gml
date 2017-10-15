@@ -9,9 +9,11 @@ enum TRANSITION_MODE
 	NEXT,
 	GOTO,
 	RESTART,
-	INTRO
+	INTRO,
+    FINISHING_UP
 };
 
 mode = TRANSITION_MODE.INTRO;
-percent = 1;
+percent = 1.2;
+targetPercent = 1.2;
 target = room;

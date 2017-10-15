@@ -10,3 +10,4 @@ walkSpeed = 4;
 doubleJumpAvailable = false;
 jumpHeight = -8;
 onTheGround = false;
+hasControl = true;

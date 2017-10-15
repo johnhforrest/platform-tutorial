@@ -16,10 +16,13 @@ else
 var move = key_right - key_left;
 horizontalSpeed = round(move * walkSpeed);
 
-scr_movement(object_index);
+if (hasControl)
+{
+    scr_movement(object_index);
 
-x += horizontalSpeed;
-y += verticalSpeed;
+    x += horizontalSpeed;
+    y += verticalSpeed;
+}
 
 // Animating the player
 if (!onTheGround)
