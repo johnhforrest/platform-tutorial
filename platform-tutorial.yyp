@@ -31,6 +31,14 @@
     },
     "resources": [
         {
+            "Key": "01bcc163-762d-4bce-b020-eb8a6d86acfe",
+            "Value": {
+                "id": "fbffb83c-39f6-402b-ad78-43b77c886af6",
+                "resourcePath": "objects\\obj_trigger\\obj_trigger.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "0ee3d4f7-0750-4798-9ff3-de16fa8080d9",
             "Value": {
                 "id": "fb57fc0a-a751-417d-9ca6-35c56b16676c",
@@ -155,6 +163,14 @@
             "Value": {
                 "id": "ddb15d4c-abf3-4f6d-b2bf-53de55f5ff6b",
                 "resourcePath": "scripts\\scr_movement\\scr_movement.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "5f099fb3-6d38-4333-a38d-720489be0ffe",
+            "Value": {
+                "id": "54be36e4-2ea0-415d-8f7a-5e4d1d99cb67",
+                "resourcePath": "scripts\\scr_slide_transition\\scr_slide_transition.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -335,6 +351,14 @@
             }
         },
         {
+            "Key": "e5337a4e-df1f-45fb-bef2-8f6743ec662e",
+            "Value": {
+                "id": "8f2cd1de-3338-44b6-9ffd-36716da6a6d3",
+                "resourcePath": "sprites\\spr_trigger\\spr_trigger.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "ee1bd067-e2da-4251-a450-fa5a05a0b570",
             "Value": {
                 "id": "96ebfc83-c9ad-4a9c-83f7-981b1a809493",
@@ -360,7 +384,8 @@
         }
     ],
     "script_order": [
-        "542952ef-9cf9-4442-b84b-f371c99d523d"
+        "542952ef-9cf9-4442-b84b-f371c99d523d",
+        "5f099fb3-6d38-4333-a38d-720489be0ffe"
     ],
     "tutorial": ""
 }
