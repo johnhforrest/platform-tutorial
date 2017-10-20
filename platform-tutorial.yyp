@@ -367,6 +367,14 @@
             }
         },
         {
+            "Key": "d421c64e-eb56-4796-a6bf-bfe93f595d3a",
+            "Value": {
+                "id": "8ab21098-5dc4-4830-8e8a-b7831d6c6e8a",
+                "resourcePath": "objects\\obl_pickup_doublejump\\obl_pickup_doublejump.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "dc666a52-ba14-4d47-ac93-7dcc672f0266",
             "Value": {
                 "id": "c9628663-483d-4134-995f-4c92b9490341",

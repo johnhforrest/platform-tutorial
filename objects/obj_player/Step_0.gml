@@ -30,7 +30,7 @@ if (tile_hcollision(_tileMap, _horizontalSpeed))
 }
 
 // Calculate vertical movement
-if ( _doubleJumpAvailable && key_jump)
+if (_abilityLevel >= PLAYER_ABILITIES.DOUBLEJUMP && _doubleJumpAvailable && key_jump)
 {
 	_verticalSpeed = _jumpHeight;
 	_doubleJumpAvailable = false;
