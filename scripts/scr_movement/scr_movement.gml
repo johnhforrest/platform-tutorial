@@ -19,10 +19,10 @@ with (argument0)
 
 	if (objectName == "obj_player")
 	{
-		if (doubleJumpAvailable && key_jump)
+		if (_doubleJumpAvailable && key_jump)
 		{
 			verticalSpeed = jumpHeight;
-			doubleJumpAvailable = false;
+			_doubleJumpAvailable = false;
 		}
 
 		onTheGround = (tilemap_get_at_pixel(tileMap, bbox_right, bbox_bottom + 1) != 0) || (tilemap_get_at_pixel(tileMap, bbox_left, bbox_bottom + 1) != 0);
@@ -31,7 +31,7 @@ with (argument0)
 			if (key_jump)
 			{
 				verticalSpeed = jumpHeight;
-				doubleJumpAvailable = true;
+				_doubleJumpAvailable = true;
 				onTheGround = false;
 			}
 			else
