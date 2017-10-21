@@ -1,38 +1,24 @@
-if (hitPoints <= 0)
+if (_hitPoints <= 0)
 {
-	with (instance_create_layer(x, y, "Enemies", obj_dead))
-	{
-		direction = other.hitFrom;
-		horizontalSpeed = lengthdir_x(3, direction);
-		verticalSpeed = lengthdir_y(4, direction);
-		
-		if (sign(horizontalSpeed) != 0)
-		{
-			image_xscale = sign(horizontalSpeed);
-		}
-	}
+	image_index = 1;
+    _horizontalSpeed = 0;
+    return;
+}
+
+// Calculate horizontal movement
+if (tile_hcollision(_tileMap, _horizontalSpeed))
+{
+    // if we have a collision, snap to the tile grid (i.e., close the remaining distance to the wall but not over)
+	x = _horizontalSpeed > 0
+		? x - (x % TILE_SIZE) + (TILE_SIZE - 1) - (bbox_right - x)
+		: x - (x % TILE_SIZE) - (bbox_left - x);
 	
-	instance_destroy();
+	_horizontalSpeed = -_horizontalSpeed;
 }
-
-scr_movement(object_index);
-
-// if the enemy is on the ground and not walking, start them walking
-if (verticalSpeed == 0 && horizontalSpeed == 0)
+else if (tilemap_get_at_pixel(_tileMap, (_horizontalSpeed > 0 ? bbox_right : bbox_left) + _horizontalSpeed, bbox_bottom + 1) == 0)
 {
-	horizontalSpeed = walkSpeed;
+    _horizontalSpeed = -_horizontalSpeed;
 }
 
-x += horizontalSpeed;
-y += verticalSpeed;
-
-image_speed = 1;
-if (horizontalSpeed == 0)
-{
-	sprite_index = spr_enemy;
-}
-else
-{
-	sprite_index = spr_enemy_running;
-	image_xscale = sign(horizontalSpeed);
-}
+x += _horizontalSpeed;
+image_xscale = sign(_horizontalSpeed);

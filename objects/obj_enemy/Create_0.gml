@@ -1,12 +1,13 @@
-// Members required for scr_movement
-horizontalSpeed = 0;
-verticalSpeed = 0;
-selfGravity = 0.5;
-walkSpeed = 2;
-timer = true;
-tileMap = layer_tilemap_get_id("WallTiles");
+/// @description Setting up the enemy object
+
+// Movement related members
+_horizontalSpeed = 4;
+_tileMap = layer_tilemap_get_id("WallTiles");
 
 // obj_enemy specific members
-hitPoints = 2;
-flash = 0;
-hitFrom = 0;
+_hitPoints = 6;
+_flash = 0;
+_hitFrom = 0;
+
+// Snap enemy to the grid
+y = y - (y % TILE_SIZE) + (TILE_SIZE - 1) - (bbox_bottom - y);
