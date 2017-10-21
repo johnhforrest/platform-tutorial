@@ -30,10 +30,10 @@ if (tile_hcollision(_tileMap, _horizontalSpeed))
 }
 
 // Calculate vertical movement
-if (_abilityLevel >= PLAYER_ABILITIES.DOUBLEJUMP && _doubleJumpAvailable && key_jump)
+if (_abilities[ABILITIES.DOUBLEJUMP] == 1 && key_jump)
 {
 	_verticalSpeed = _jumpHeight;
-	_doubleJumpAvailable = false;
+	_abilities[ABILITIES.DOUBLEJUMP] = 0;
 }
 
 if (tile_vcollision(_tileMap, 1))
@@ -41,7 +41,11 @@ if (tile_vcollision(_tileMap, 1))
     if (key_jump)
     {
     	_verticalSpeed = _jumpHeight;
-    	_doubleJumpAvailable = true;
+        
+        if (_abilities[ABILITIES.DOUBLEJUMP] != -1)
+        {
+    	    _abilities[ABILITIES.DOUBLEJUMP] = 1;
+        }
     }
     else
     {

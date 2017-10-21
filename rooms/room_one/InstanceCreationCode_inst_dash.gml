@@ -1,0 +1,1 @@
+_abilityIndex = ABILITIES.DASH;

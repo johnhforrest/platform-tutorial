@@ -7,7 +7,7 @@ if (!_pickedUp)
     with (other)
     {
         _hasControl = false;
-        _abilityLevel = PLAYER_ABILITIES.DOUBLEJUMP;
+        _abilities[other._abilityIndex] = 0;
     }
 
     alarm[0] = _pickupLength;
