@@ -4,20 +4,32 @@ if (!_hasControl)
     return;
 }
 
-// Get player input
-var key_jump = gamepad_button_check_pressed(0, gp_face1);
-var key_left = 0;
-var key_right = 0;
-
-if (abs(gamepad_axis_value(0, gp_axislh)) > 0.4)
-{
-	key_left = abs(min(gamepad_axis_value(0, gp_axislh), 0));
-	key_right = max(gamepad_axis_value(0, gp_axislh), 0);
-}
-
 // Calculate horizontal movement
-var move = key_right - key_left;
-_horizontalSpeed = round(move * _walkSpeed);
+if (_abilities[ABILITIES.DASH] == 1 && gamepad_button_check_pressed(0, gp_shoulderrb))
+{
+    _horizontalSpeed = sign(image_xscale) * _walkSpeed * 3;
+    _verticalSpeed = 0;
+    _abilities[ABILITIES.DASH] = 0;
+    alarm[0] = 15;
+}
+else if (_abilities[ABILITIES.DASH] != 0)
+{
+    var key_left = 0;
+    var key_right = 0;
+
+    if (abs(gamepad_axis_value(0, gp_axislh)) > 0.4)
+    {
+    	key_left = abs(min(gamepad_axis_value(0, gp_axislh), 0));
+    	key_right = max(gamepad_axis_value(0, gp_axislh), 0);
+    }
+    
+    _horizontalSpeed = round((key_right - key_left) * _walkSpeed);
+    
+    if (_horizontalSpeed != 0)
+    {
+        image_xscale = sign(_horizontalSpeed);
+    }
+}
 
 if (tile_hcollision(_tileMap, _horizontalSpeed))
 {
@@ -29,7 +41,17 @@ if (tile_hcollision(_tileMap, _horizontalSpeed))
 	_horizontalSpeed = 0;
 }
 
+x += _horizontalSpeed;
+
+if (_abilities[ABILITIES.DASH] == 0)
+{
+    // Don't do any vertical movement while dash is happening
+    return;
+}
+
 // Calculate vertical movement
+var key_jump = gamepad_button_check_pressed(0, gp_face1);
+
 if (_abilities[ABILITIES.DOUBLEJUMP] == 1 && key_jump)
 {
 	_verticalSpeed = _jumpHeight;
@@ -38,20 +60,12 @@ if (_abilities[ABILITIES.DOUBLEJUMP] == 1 && key_jump)
 
 if (tile_vcollision(_tileMap, 1))
 {
-    if (key_jump)
+    if (_abilities[ABILITIES.DOUBLEJUMP] != -1)
     {
-    	_verticalSpeed = _jumpHeight;
-        
-        if (_abilities[ABILITIES.DOUBLEJUMP] != -1)
-        {
-    	    _abilities[ABILITIES.DOUBLEJUMP] = 1;
-        }
-    }
-    else
-    {
-        _verticalSpeed = 0;
+    	_abilities[ABILITIES.DOUBLEJUMP] = 1;
     }
     
+    _verticalSpeed = key_jump ? _jumpHeight : 0;
     _timer = false;
 }
 else
@@ -79,5 +93,4 @@ else
     }
 }
 
-x += _horizontalSpeed;
 y += _verticalSpeed;
