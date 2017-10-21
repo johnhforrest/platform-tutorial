@@ -9,8 +9,8 @@ if (instance_exists(follow))
 
 // Update camera position
 // Each frame we move 1/25 of the distance to have a smoother animation
-x += (xTo - x) / 15;
-y += (yTo - y) / 15;
+x += ceil((xTo - x) / 25);
+y += ceil((yTo - y) / 25);
 
 x = clamp(x, viewWidthHalf, room_width - viewWidthHalf);
 y = clamp(y, viewHeightHalf, room_height - viewHeightHalf);

@@ -2,7 +2,7 @@
     "id": "d421c64e-eb56-4796-a6bf-bfe93f595d3a",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obl_pickup_doublejump",
+    "name": "obj_ability_pickup",
     "eventList": [
         {
             "id": "d26ffd8c-7faf-4726-ac8c-cf036e55a0c0",

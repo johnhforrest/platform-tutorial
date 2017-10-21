@@ -12,10 +12,13 @@ _jumpHeight = -12;
 _doubleJumpAvailable = false;
 _onTheGround = false;
 _hasControl = true;
-_abilityLevel = PLAYER_ABILITIES.NONE;
+_abilities = array_create(ABILITIES.COUNT, -1);
 
-enum PLAYER_ABILITIES
+enum ABILITIES
 {
     NONE,
-    DOUBLEJUMP
+    DASH,
+    DOUBLEJUMP,
+    
+    COUNT
 };
