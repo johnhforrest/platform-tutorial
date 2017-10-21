@@ -9,6 +9,10 @@ _timer = true;
 _tileMap = layer_tilemap_get_id("WallTiles");
 
 // obj_player specific members
+_attackPower = 2;
+_cooldown = 0;
+_cooldownReset = 10;
+
 _jumpHeight = -12;
 _doubleJumpAvailable = false;
 _onTheGround = false;

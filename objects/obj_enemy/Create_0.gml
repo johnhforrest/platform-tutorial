@@ -5,7 +5,7 @@ _horizontalSpeed = 4;
 _tileMap = layer_tilemap_get_id("WallTiles");
 
 // obj_enemy specific members
-_hitPoints = 2;
+_hitPoints = 6;
 _flash = 0;
 _hitFrom = 0;
 

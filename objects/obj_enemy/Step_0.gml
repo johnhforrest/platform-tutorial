@@ -1,6 +1,6 @@
 if (_hitPoints <= 0)
 {
-	sprite_index = 1;
+	image_index = 1;
     _horizontalSpeed = 0;
     return;
 }
