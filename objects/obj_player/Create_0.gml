@@ -8,6 +8,9 @@ _walkSpeed = 4;
 _timer = true;
 _tileMap = layer_tilemap_get_id("WallTiles");
 
+// Life
+_hitPoints = 20;
+
 // Attacking
 _attackPower = 2;
 _cooldown = 0;
