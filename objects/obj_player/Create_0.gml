@@ -1,6 +1,6 @@
 /// @description Set up player object
 
-// General movement related members
+// Movement
 _horizontalSpeed = 0;
 _verticalSpeed = 0;
 _selfGravity = 0.5;
