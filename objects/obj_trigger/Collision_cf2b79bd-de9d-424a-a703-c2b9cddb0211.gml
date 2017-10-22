@@ -5,6 +5,6 @@ with (obj_player)
     if (_state != STATES.FROZEN)
     {
         _state = STATES.FROZEN;
-        scr_slide_transition(TRANSITION_MODE.NEXT);
+        slide_transition(TRANSITION_MODE.NEXT);
     }
 }

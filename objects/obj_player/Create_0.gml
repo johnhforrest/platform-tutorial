@@ -9,7 +9,8 @@ _timer = true;
 _tileMap = layer_tilemap_get_id("WallTiles");
 
 // Life
-_hitPoints = 20;
+_maxHitPoints = 5;
+_hitPoints = _maxHitPoints;
 
 // Attacking
 _attackPower = 2;
