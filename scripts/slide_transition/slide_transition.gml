@@ -10,9 +10,3 @@ with (obj_transition)
         target = argument[1];
     }
 }
-
-// TODO: need to figure out the camera object between room transitions
-with (obj_camera)
-{
-    camera = view_camera[0];
-}

@@ -9,7 +9,7 @@ _tileMap = layer_tilemap_get_id("WallTiles");
 _hitPoints = 6;
 
 // Attack
-_attackPower = 2;
+_attackPower = 1;
 
 _state = ENEMY_STATES.DEFAULT;
 enum ENEMY_STATES

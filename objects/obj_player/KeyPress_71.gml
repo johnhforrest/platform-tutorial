@@ -2,9 +2,9 @@
 
 if (room == room_two)
 {
-    scr_slide_transition(TRANSITION_MODE.GOTO, room_one);
+    slide_transition(TRANSITION_MODE.GOTO, room_one);
 }
 else
 {
-    scr_slide_transition(TRANSITION_MODE.GOTO, room_two);
+    slide_transition(TRANSITION_MODE.GOTO, room_two);
 }
