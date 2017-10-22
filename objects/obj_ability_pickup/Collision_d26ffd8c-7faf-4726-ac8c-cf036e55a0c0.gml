@@ -6,7 +6,7 @@ if (!_pickedUp)
     
     with (other)
     {
-        _hasControl = false;
+        _state = STATES.FROZEN;
         _abilities[other._abilityIndex] = 1;
     }
 
