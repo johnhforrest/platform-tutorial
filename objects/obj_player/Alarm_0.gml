@@ -1,2 +1,3 @@
-/// @description Reset dash ability
-_abilities[ABILITIES.DASH] = 1;
+/// @description Leave dash state
+
+_state = STATES.DEFAULT;

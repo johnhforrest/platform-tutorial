@@ -1,6 +1,6 @@
 /// @description Set up player object
 
-// General movement related members
+// Movement
 _horizontalSpeed = 0;
 _verticalSpeed = 0;
 _selfGravity = 0.5;
@@ -8,17 +8,31 @@ _walkSpeed = 4;
 _timer = true;
 _tileMap = layer_tilemap_get_id("WallTiles");
 
-// obj_player specific members
+// Life
+_hitPoints = 20;
+
+// Attacking
 _attackPower = 2;
 _cooldown = 0;
 _cooldownReset = 10;
 
+// Dashing
+_dashLength = 15;
+
+// Jumping
 _jumpHeight = -12;
 _doubleJumpAvailable = false;
-_onTheGround = false;
-_hasControl = true;
-_abilities = array_create(ABILITIES.COUNT, -1);
 
+_state = STATES.DEFAULT;
+enum STATES
+{
+    DEFAULT,
+    HIT,
+    DASHING,
+    FROZEN
+}
+
+_abilities = array_create(ABILITIES.COUNT, -1);
 enum ABILITIES
 {
     NONE,

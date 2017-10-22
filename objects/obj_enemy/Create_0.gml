@@ -1,13 +1,23 @@
 /// @description Setting up the enemy object
 
-// Movement related members
-_horizontalSpeed = 4;
+// Movement
+_walkSpeed = 4;
+_horizontalSpeed = _walkSpeed;
 _tileMap = layer_tilemap_get_id("WallTiles");
 
-// obj_enemy specific members
+// Life
 _hitPoints = 6;
-_flash = 0;
-_hitFrom = 0;
+
+// Attack
+_attackPower = 2;
+
+_state = ENEMY_STATES.DEFAULT;
+enum ENEMY_STATES
+{
+    DEFAULT,
+    HIT,
+    DEAD
+}
 
 // Snap enemy to the grid
 y = y - (y % TILE_SIZE) + (TILE_SIZE - 1) - (bbox_bottom - y);

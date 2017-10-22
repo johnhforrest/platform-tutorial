@@ -2,7 +2,7 @@
 
 with (obj_player)
 {
-    _hasControl = true;
+    _state = STATES.DEFAULT;
 }
 
 instance_destroy();

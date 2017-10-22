@@ -2,9 +2,9 @@
 
 with (obj_player)
 {
-    if (hasControl)
+    if (_state != STATES.FROZEN)
     {
-        hasControl = false;
+        _state = STATES.FROZEN;
         scr_slide_transition(TRANSITION_MODE.NEXT);
     }
 }
