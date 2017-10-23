@@ -87,6 +87,14 @@
             }
         },
         {
+            "Key": "23d3dc77-c53b-45e5-8576-0b98127474d6",
+            "Value": {
+                "id": "c3190925-ccac-49cb-930e-dd1ec824b4a8",
+                "resourcePath": "objects\\obj_player_marker\\obj_player_marker.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "26496160-5e34-49f7-9a86-213cad61e3e5",
             "Value": {
                 "id": "7e475e31-ba3f-4df3-8578-d7aa73647b2f",
@@ -215,6 +223,14 @@
             }
         },
         {
+            "Key": "65f895ce-da35-48a7-8dd6-ff56318cd134",
+            "Value": {
+                "id": "c11a3c34-d9bc-4645-a8bd-01dcfed9edba",
+                "resourcePath": "rooms\\room_two\\room_two.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "66313134-ff68-44fa-8b11-2c517bb968c4",
             "Value": {
                 "id": "3195f04f-bcee-4a38-a800-013b90e74f54",
@@ -324,14 +340,6 @@
                 "id": "1305239f-320b-4f5b-8fac-f1be53c80332",
                 "resourcePath": "objects\\obj_heart_pickup\\obj_heart_pickup.yy",
                 "resourceType": "GMObject"
-            }
-        },
-        {
-            "Key": "95d89c13-3a33-4cc4-b495-ea5deca7d19c",
-            "Value": {
-                "id": "b1b47473-34d4-4039-abce-39b503eeac7f",
-                "resourcePath": "rooms\\room_two\\room_two.yy",
-                "resourceType": "GMRoom"
             }
         },
         {
