@@ -4,6 +4,8 @@ draw_self();
 
 if (_pickedUp)
 {
+    draw_set_color(c_black);
+    
     switch (_abilityIndex)
     {
         case ABILITIES.DASH:
@@ -15,7 +17,9 @@ if (_pickedUp)
             break;
             
         default:
-            draw_text(x - 120, y - 60, "You gained no ability. Tell john.");
+            draw_text(x - 120, y - 60, "You gained an extra heart container!");
             break;
     }
+    
+    draw_set_color(c_white);
 }

@@ -9,7 +9,7 @@ _timer = true;
 _tileMap = layer_tilemap_get_id("WallTiles");
 
 // Life
-_maxHitPoints = 5;
+_maxHitPoints = 3;
 _hitPoints = _maxHitPoints;
 
 // Attacking
@@ -24,7 +24,10 @@ _dashLength = 15;
 _jumpHeight = -12;
 _doubleJumpAvailable = false;
 
+// Player state
 _state = STATES.DEFAULT;
+_abilities = array_create(ABILITIES.COUNT, -1);
+
 enum STATES
 {
     DEFAULT,
@@ -33,13 +36,11 @@ enum STATES
     FROZEN
 }
 
-_abilities = array_create(ABILITIES.COUNT, -1);
 enum ABILITIES
 {
     NONE,
     DASH,
     DOUBLEJUMP,
-    
     COUNT
 };
 

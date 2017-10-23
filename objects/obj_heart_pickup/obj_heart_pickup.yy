@@ -1,8 +1,8 @@
 {
-    "id": "d421c64e-eb56-4796-a6bf-bfe93f595d3a",
+    "id": "8fae6fc6-2271-4290-ba01-06cf4dc2e5d2",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_ability_pickup",
+    "name": "obj_heart_pickup",
     "eventList": [
         
     ],
@@ -22,6 +22,6 @@
     "physicsShapePoints": null,
     "physicsStartAwake": true,
     "solid": false,
-    "spriteId": "05b5ef30-29c2-4496-ab10-99aca5a1cd36",
+    "spriteId": "15d43e1a-7969-42aa-8868-576778fc15d6",
     "visible": true
 }
