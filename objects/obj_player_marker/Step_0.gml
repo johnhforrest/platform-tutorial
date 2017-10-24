@@ -1,6 +1,6 @@
-/// @description Replace self with player
+/// @description Replace self with player. Using the step event so instance creation code runs first
 
-if (instance_exists(obj_player))
+if (room == global._targetRoom && global._targetMarker == _markerIndex && instance_exists(obj_player))
 {
     with (obj_player)
     {
