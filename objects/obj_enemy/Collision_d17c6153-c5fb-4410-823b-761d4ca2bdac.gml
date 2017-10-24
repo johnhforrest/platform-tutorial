@@ -16,6 +16,7 @@ if (!other._hitEnemy)
     with (obj_player)
     {
         _horizontalSpeed = sign(other._horizontalSpeed) * -4;
+        _verticalSpeed = 0;
         _state = STATES.HIT;
     }
 
