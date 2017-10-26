@@ -24,5 +24,5 @@ if (abs(_horizontalSpeed) < 1)
 // Calculating life
 if (_hitPoints <= 0)
 {
-	game_restart();
+	slide_transition(TRANSITION_MODE.RESTART);
 }
