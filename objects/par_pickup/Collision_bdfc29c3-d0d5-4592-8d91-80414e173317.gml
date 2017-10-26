@@ -7,6 +7,7 @@ if (!_pickedUp)
     with (other)
     {
         _state = STATES.FROZEN;
+        global._pickups[? other.id] = true;
         
         if (other._abilityIndex > 0)
         {
