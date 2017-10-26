@@ -26,6 +26,7 @@ if (mode != TRANSITION_MODE.OFF)
 				break;
 			
 			case TRANSITION_MODE.RESTART:
+                ds_map_destroy(global._pickups);
                 game_restart();
 				break;
 			

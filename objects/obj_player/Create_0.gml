@@ -1,9 +1,5 @@
 /// @description Set up player object
 
-// Global vars
-global._targetRoom = noone;
-global._targetMarker = -1;
-
 // Movement
 _horizontalSpeed = 0;
 _verticalSpeed = 0;
