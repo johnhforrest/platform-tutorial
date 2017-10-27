@@ -1,5 +1,7 @@
 /// @description Draw players health
 
+// TODO: Change this to a Draw GUI event
+
 if (!instance_exists(obj_player))
 {
     return;
