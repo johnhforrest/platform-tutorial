@@ -11,7 +11,7 @@ if (!_pickedUp)
         
         if (other._abilityIndex > 0)
         {
-            _abilities[other._abilityIndex] = 1;
+            obj_game._abilities[other._abilityIndex] = 1;
         }
         else
         {

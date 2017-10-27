@@ -2,29 +2,14 @@
 
 if (gamepad_button_check_pressed(0, gp_start))
 {
-    if (_paused)
+    if (_previousState == PAUSE_STATES.UNPAUSED)
     {
-        sprite_delete(_pauseSprite);
-        _pauseSprite = noone;
-        instance_activate_all();
+        _state = PAUSE_STATES.PAUSED;
     }
     else
     {
-        // TODO: We need a screenshot the size of the viewport and not the camera but haven't figured out how to do it
-        _pauseSprite = 
-            sprite_create_from_surface(
-                application_surface, 
-                0,
-                0,
-                camera_get_view_width(view_camera[0]),
-                camera_get_view_height(view_camera[0]),
-                false,
-                false,
-                0,
-                0);
-                
-        instance_deactivate_all(true);
+        _state = PAUSE_STATES.UNPAUSED;
     }
-    
-    _paused = !_paused;
 }
+
+event_user(_state);

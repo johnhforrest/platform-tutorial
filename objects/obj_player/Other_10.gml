@@ -22,10 +22,10 @@ else
 player_move();
 
 // Transition to dash state
-if (_abilities[ABILITIES.DASH] == 1 && gamepad_button_check_pressed(0, gp_shoulderrb))
+if (obj_game._abilities[ABILITIES.DASH] == 1 && gamepad_button_check_pressed(0, gp_shoulderrb))
 {
     _horizontalSpeed = sign(image_xscale) * _walkSpeed * 3;
     _verticalSpeed = 0;
-    _abilities[ABILITIES.DASH] = _dashLength;
+    obj_game._abilities[ABILITIES.DASH] = _dashLength;
     _state = STATES.DASHING;
 }

@@ -30,24 +30,24 @@ x += _horizontalSpeed;
 // Vertical movement
 var key_jump = gamepad_button_check_pressed(0, gp_face1);
 
-if (_abilities[ABILITIES.DOUBLEJUMP] == 1 && key_jump)
+if (obj_game._abilities[ABILITIES.DOUBLEJUMP] == 1 && key_jump)
 {
 	_verticalSpeed = _jumpHeight;
-	_abilities[ABILITIES.DOUBLEJUMP] = 0;
+	obj_game._abilities[ABILITIES.DOUBLEJUMP] = 0;
 }
 
 if (tile_vcollision(_tileMap, 1))
 {
     // We are on the ground, reset jump state
-    if (_abilities[ABILITIES.DOUBLEJUMP] != -1)
+    if (obj_game._abilities[ABILITIES.DOUBLEJUMP] != -1)
     {
-    	_abilities[ABILITIES.DOUBLEJUMP] = 1;
+    	obj_game._abilities[ABILITIES.DOUBLEJUMP] = 1;
     }
     
     // We are on the ground, reset dash state
-    if (_abilities[ABILITIES.DASH] != -1)
+    if (obj_game._abilities[ABILITIES.DASH] != -1)
     {
-        _abilities[ABILITIES.DASH] = 1;
+        obj_game._abilities[ABILITIES.DASH] = 1;
     }
     
     _verticalSpeed = key_jump ? _jumpHeight : 0;
