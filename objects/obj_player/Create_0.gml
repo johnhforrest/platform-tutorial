@@ -26,7 +26,6 @@ _doubleJumpAvailable = false;
 
 // Player state
 _state = STATES.DEFAULT;
-_abilities = array_create(ABILITIES.COUNT, -1);
 
 enum STATES
 {
@@ -35,14 +34,6 @@ enum STATES
     DASHING,
     FROZEN
 }
-
-enum ABILITIES
-{
-    NONE,
-    DASH,
-    DOUBLEJUMP,
-    COUNT
-};
 
 // Snap player to the grid
 y = y - (y % TILE_SIZE) + (TILE_SIZE - 1) - (bbox_bottom - y);

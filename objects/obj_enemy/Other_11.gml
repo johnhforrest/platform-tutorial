@@ -24,7 +24,9 @@ if (abs(_horizontalSpeed) < 1)
 // Calculating life
 if (_hitPoints <= 0)
 {
-	image_index = 1;
     _horizontalSpeed = 0;
+    
+    // TODO: No need to have an instance here anymore
+    sprite_index = spr_enemy_dead;
     _state = ENEMY_STATES.DEAD;
 }

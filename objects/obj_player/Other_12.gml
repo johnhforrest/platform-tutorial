@@ -9,15 +9,15 @@ if (tile_hcollision(_tileMap, _horizontalSpeed))
 		: x - (x % TILE_SIZE) - (bbox_left - x);
 	
 	_horizontalSpeed = 0;
-    _abilities[ABILITIES.DASH] = 0;
+    obj_game._abilities[ABILITIES.DASH] = 0;
 }
 
 x += _horizontalSpeed;
 
 // State counter
-if (_abilities[ABILITIES.DASH] > 0)
+if (obj_game._abilities[ABILITIES.DASH] > 0)
 {
-    _abilities[ABILITIES.DASH]--;
+    obj_game._abilities[ABILITIES.DASH]--;
 }
 else
 {

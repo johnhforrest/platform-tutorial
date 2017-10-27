@@ -1,4 +1,4 @@
-/// @description Replace self with player. Using the step event so instance creation code runs first
+/// @description Replace self with player if it's the selected marker
 
 if (room == global._targetRoom && global._targetMarker == _markerIndex && instance_exists(obj_player))
 {
