@@ -17,5 +17,5 @@ if (sprite_exists(_pauseSprite))
     
     var _width = display_get_gui_width();
     var _height = display_get_gui_height();
-    draw_rectangle(TILE_SIZE, TILE_SIZE, _width - TILE_SIZE, _height - TILE_SIZE, true);
+    //draw_rectangle(TILE_SIZE, TILE_SIZE, _width - TILE_SIZE, _height - TILE_SIZE, true);
 }

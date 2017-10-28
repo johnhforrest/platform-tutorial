@@ -199,6 +199,14 @@
             }
         },
         {
+            "Key": "3da2b2d9-3fb6-4a88-83e7-05ad8ddd492f",
+            "Value": {
+                "id": "dfe2a4a8-9ede-4a27-a253-11c36766ff38",
+                "resourcePath": "rooms\\room_pause\\room_pause.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "426587b7-0720-48ef-90cc-8467601dca6c",
             "Value": {
                 "id": "6b0dac0a-f987-4cd3-88ab-8f9f9de23add",
@@ -276,6 +284,14 @@
                 "id": "3195f04f-bcee-4a38-a800-013b90e74f54",
                 "resourcePath": "sprites\\spr_heart\\spr_heart.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "666c9113-95cd-487b-afb3-b029111d6df3",
+            "Value": {
+                "id": "99179699-f90c-45c6-83ba-797514ffa11e",
+                "resourcePath": "scripts\\draw_health\\draw_health.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -573,7 +589,8 @@
         "57edc398-b1f9-405b-8e2b-e9a425ff1ce4",
         "c951e0e4-0036-4744-bf74-ee0276ce7c88",
         "e9f72378-1bd6-49aa-a8b2-12f79b8a5e70",
-        "a6c75cc4-7acf-464a-8e1c-80a12139ccb9"
+        "a6c75cc4-7acf-464a-8e1c-80a12139ccb9",
+        "666c9113-95cd-487b-afb3-b029111d6df3"
     ],
     "tutorial": ""
 }
