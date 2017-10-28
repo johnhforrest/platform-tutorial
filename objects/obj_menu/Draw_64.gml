@@ -24,7 +24,7 @@ for (var i = 0; i < ds_list_size(_options); i++)
 // Drawing player stats
 var xPos = (_width * 2);
 var yPos = y;
-draw_set_halign(fa_left);
+draw_set_color(c_white);
 draw_text(xPos - 8, yPos, "Health");
 draw_text(xPos - 8, yPos + 80, "Abilities");
 
