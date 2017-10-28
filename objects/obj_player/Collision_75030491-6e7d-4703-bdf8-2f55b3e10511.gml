@@ -1,16 +1,12 @@
 /// @description Collision with enemy
 
-if (other._state != ENEMY_STATES.DEAD)
+if (_invincibilityFrames == 0 && other._state != ENEMY_STATES.DEAD)
 {
-    _hitPoints -= other._attackPower;
-    _horizontalSpeed = other.image_xscale * 8;
-    _verticalSpeed = 0;
-    image_index = 1;
-    _state = STATES.HIT;
-
     with (other)
     {
-        _horizontalSpeed = image_xscale * -8;
+        var hKnockback = 8;
+        hit_player(_attackPower, image_xscale * hKnockback, 0);
+        _horizontalSpeed = image_xscale * -hKnockback;
         _state = ENEMY_STATES.HIT;
     }
 }

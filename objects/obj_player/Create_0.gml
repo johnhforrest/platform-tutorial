@@ -11,6 +11,8 @@ _tileMap = layer_tilemap_get_id("WallTiles");
 // Life
 _maxHitPoints = 3;
 _hitPoints = _maxHitPoints;
+_invincibilityFrames = 0;
+_invincibilityInterval = 8;
 
 // Attacking
 _attackPower = 2;
@@ -30,7 +32,7 @@ _state = STATES.DEFAULT;
 enum STATES
 {
     DEFAULT,
-    HIT,
+    KNOCKBACK,
     DASHING,
     FROZEN
 }

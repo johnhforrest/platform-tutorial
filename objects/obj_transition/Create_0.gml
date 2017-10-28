@@ -17,3 +17,6 @@ mode = TRANSITION_MODE.INTRO;
 percent = 1.2;
 targetPercent = 1.2;
 target = room;
+
+// Put this on top of everything else
+depth = -1000;

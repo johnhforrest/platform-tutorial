@@ -17,7 +17,7 @@ if (!other._hitEnemy)
     {
         _horizontalSpeed = sign(other._horizontalSpeed) * -4;
         _verticalSpeed = 0;
-        _state = STATES.HIT;
+        _state = STATES.KNOCKBACK;
     }
 
     _hitPoints -= obj_player._attackPower;
