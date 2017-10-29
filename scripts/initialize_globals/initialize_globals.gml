@@ -7,4 +7,4 @@ if (!instance_exists(obj_game))
 }
 
 show_debug_message("Game initialized. Starting...");
-room_goto_next();
+room_goto(room_one);
