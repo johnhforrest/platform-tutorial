@@ -1,7 +1,7 @@
 /// @description Default state
 
 // Performing both horizontal and vertical movement
-player_move();
+move_player();
 
 // Calculate attack
 if (_cooldown == 0)
@@ -9,7 +9,7 @@ if (_cooldown == 0)
     if (gamepad_button_check_pressed(0, gp_face3))
     {
         global.debug_num_attacks++;
-        show_debug_message("num attacks: " + string(global.debug_num_attacks));
+        //show_debug_message("num attacks: " + string(global.debug_num_attacks));
         
         with (instance_create_layer(x + (TILE_SIZE * image_xscale), y, "Player", obj_attack))
         {

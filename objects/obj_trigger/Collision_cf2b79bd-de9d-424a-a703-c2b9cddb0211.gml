@@ -5,9 +5,9 @@ with (obj_player)
     if (_state != STATES.FROZEN)
     {
         _state = STATES.FROZEN;
-        global._targetRoom = other._targetRoom;
-        global._targetMarker = other._targetMarker;
+        obj_game._targetRoom = other._targetRoom;
+        obj_game._targetMarker = other._targetMarker;
         
-        slide_transition(TRANSITION_MODE.GOTO, global._targetRoom);
+        slide_transition(TRANSITION_MODE.GOTO, obj_game._targetRoom);
     }
 }

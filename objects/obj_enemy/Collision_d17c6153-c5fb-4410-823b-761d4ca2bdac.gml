@@ -1,8 +1,8 @@
 /// @description Collision with weapon
 
-if (!other._hitEnemy)
+if (_state != STATES.DEAD && !ds_map_exists(other._enemiesHit, id))
 {
-    other._hitEnemy = true;
+    ds_map_add(other._enemiesHit, id, true);
     
     var hKnockback = floor(lengthdir_x(8, other._direction));
     var vKnockback = floor(lengthdir_y(8, other._direction));

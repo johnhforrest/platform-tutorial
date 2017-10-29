@@ -1,11 +1,11 @@
 /// @description Creates the pickup
 
-if (!ds_map_exists(global._pickups, id))
+if (!ds_map_exists(obj_game._pickups, id))
 {
-    global._pickups[? id] = false;
+    obj_game._pickups[? id] = false;
 }
 
-if (!global._pickups[? id])
+if (!obj_game._pickups[? id])
 {
     _pickedUp = false;
     _pickupLength = 40;
