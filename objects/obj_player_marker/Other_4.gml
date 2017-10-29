@@ -1,6 +1,6 @@
 /// @description Replace self with player if it's the selected marker
 
-if (room == global._targetRoom && global._targetMarker == _markerIndex && instance_exists(obj_player))
+if (room == obj_game._targetRoom && obj_game._targetMarker == _markerIndex && instance_exists(obj_player))
 {
     with (obj_player)
     {

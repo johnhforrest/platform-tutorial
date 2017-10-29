@@ -1,6 +1,6 @@
 /// @description Listening for pause action
 
-if (gamepad_button_check_pressed(0, gp_start))
+if (obj_input._startPressed)
 {
     if (_previousState == PAUSE_STATES.UNPAUSED)
     {

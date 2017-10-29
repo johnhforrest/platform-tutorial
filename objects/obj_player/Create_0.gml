@@ -11,7 +11,7 @@ _invincibilityInterval = 8;
 // Attacking
 _attackPower = 2;
 _cooldown = 0;
-_cooldownReset = 20;
+_cooldownReset = 10;
 
 // Dashing
 _dashLength = 15;

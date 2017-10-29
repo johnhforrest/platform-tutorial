@@ -1,17 +1,23 @@
 /// @description Collision with weapon
 
-if (!other._hitEnemy)
+if (_state != STATES.DEAD && !ds_map_exists(other._enemiesHit, id))
 {
-    other._hitEnemy = true;
+    ds_map_add(other._enemiesHit, id, true);
     
     var hKnockback = floor(lengthdir_x(8, other._direction));
-    var vKnockback = floor(lengthdir_y(8, other._direction));
+    var vKnockback = 0;
+    
+    if (other._direction == 90 || other._direction == 270)
+    {
+        vKnockback = floor(lengthdir_y(8, other._direction));
+    }
+    
     hit_character(self, obj_player._attackPower, hKnockback, vKnockback);
     
     with (obj_player)
     {
         _horizontalSpeed = -hKnockback / 2;
-        _verticalSpeed = 0;
+        _verticalSpeed = -vKnockback * 2;
         _state = STATES.KNOCKBACK;
     }
 

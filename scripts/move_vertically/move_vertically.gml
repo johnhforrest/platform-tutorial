@@ -25,4 +25,4 @@ if (tile_vcollision(_tileMap, _verticalSpeed))
     _timer = false;
 }
 
-y += _verticalSpeed;
+y += round(_verticalSpeed);

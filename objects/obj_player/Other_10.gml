@@ -1,19 +1,36 @@
 /// @description Default state
 
 // Performing both horizontal and vertical movement
-player_move();
+move_player();
 
 // Calculate attack
 if (_cooldown == 0)
 {
-    if (gamepad_button_check_pressed(0, gp_face3))
+    if (obj_input._attackPressed)
     {
         global.debug_num_attacks++;
-        show_debug_message("num attacks: " + string(global.debug_num_attacks));
+        //show_debug_message("num attacks: " + string(global.debug_num_attacks));
         
-        with (instance_create_layer(x + (TILE_SIZE * image_xscale), y, "Player", obj_attack))
+        with (instance_create_layer(x, y, "Player", obj_attack))
         {
-            _direction = point_direction(other.x, other.y, x, y);
+            var offset = TILE_SIZE * 1.5;
+            if (obj_input._verticalSum > 0)
+            {
+                y -= offset;
+                image_angle = 90;
+                _direction = 90;
+            }
+            else if (obj_input._verticalSum < 0)
+            {
+                y += offset;
+                image_angle = 270;
+                _direction = 270;
+            }
+            else
+            {
+                 x += (offset * other.image_xscale)
+                _direction = point_direction(other.x, other.y, x, y);
+            }
         }
         
         _cooldown = _cooldownReset;
@@ -25,7 +42,7 @@ else
 }
 
 // Transition to dash state
-if (obj_game._abilities[ABILITIES.DASH] == 1 && gamepad_button_check_pressed(0, gp_shoulderrb))
+if (obj_game._abilities[ABILITIES.DASH] == 1 && obj_input._dashPressed)
 {
     _horizontalSpeed = sign(image_xscale) * _walkSpeed * 3;
     _verticalSpeed = 0;
