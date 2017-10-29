@@ -7,7 +7,7 @@ _walkSpeed = 2;
 _horizontalSpeed = _walkSpeed;
 
 // Life
-_hitPoints = 6;
+_hitPoints = 100;
 
 // Attack
 _attackPower = 1;

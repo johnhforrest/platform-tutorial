@@ -11,9 +11,26 @@ if (_cooldown == 0)
         global.debug_num_attacks++;
         //show_debug_message("num attacks: " + string(global.debug_num_attacks));
         
-        with (instance_create_layer(x + (TILE_SIZE * image_xscale), y, "Player", obj_attack))
+        with (instance_create_layer(x, y, "Player", obj_attack))
         {
-            _direction = point_direction(other.x, other.y, x, y);
+            var offset = TILE_SIZE * 1.5;
+            if (obj_input._verticalSum > 0)
+            {
+                y -= offset;
+                image_angle = 90;
+                _direction = 90;
+            }
+            else if (obj_input._verticalSum < 0)
+            {
+                y += offset;
+                image_angle = 270;
+                _direction = 270;
+            }
+            else
+            {
+                 x += (offset * other.image_xscale)
+                _direction = point_direction(other.x, other.y, x, y);
+            }
         }
         
         _cooldown = _cooldownReset;
