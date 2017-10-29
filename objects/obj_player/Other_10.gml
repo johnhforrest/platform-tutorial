@@ -6,7 +6,7 @@ move_player();
 // Calculate attack
 if (_cooldown == 0)
 {
-    if (gamepad_button_check_pressed(0, gp_face3))
+    if (obj_input._attackPressed)
     {
         global.debug_num_attacks++;
         //show_debug_message("num attacks: " + string(global.debug_num_attacks));
@@ -25,7 +25,7 @@ else
 }
 
 // Transition to dash state
-if (obj_game._abilities[ABILITIES.DASH] == 1 && gamepad_button_check_pressed(0, gp_shoulderrb))
+if (obj_game._abilities[ABILITIES.DASH] == 1 && obj_input._dashPressed)
 {
     _horizontalSpeed = sign(image_xscale) * _walkSpeed * 3;
     _verticalSpeed = 0;

@@ -43,4 +43,4 @@ else if (preferGround)
     }
 }
 
-x += _horizontalSpeed;
+x += round(_horizontalSpeed);

@@ -17,6 +17,7 @@ _playerHitPoints = obj_player._hitPoints;
 _playerMaxHitPoints = obj_player._maxHitPoints;
 
 instance_deactivate_all(true);
+instance_activate_object(obj_input);
 instance_create_layer(TILE_SIZE * 2, TILE_SIZE * 2, "Player", obj_menu);
 
 _state = PAUSE_STATES.WAITING;

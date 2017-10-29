@@ -19,8 +19,9 @@ _playerMaxHitPoints = 0;
 _abilities = array_create(ABILITIES.COUNT, -1);
 
 // Creating other persistent objects
-instance_create_layer(x, y, "Player", obj_transition);
+instance_create_layer(x, y, "Player", obj_input);
 instance_create_layer(x, y, "Player", obj_camera);
+instance_create_layer(x, y, "Player", obj_transition);
 
 enum PAUSE_STATES
 {

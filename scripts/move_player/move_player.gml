@@ -1,14 +1,5 @@
 // Horizontal movement
-var key_left = 0;
-var key_right = 0;
-
-if (abs(gamepad_axis_value(0, gp_axislh)) > 0.4)
-{
-    key_left = abs(min(gamepad_axis_value(0, gp_axislh), 0));
-    key_right = max(gamepad_axis_value(0, gp_axislh), 0);
-}
-    
-_horizontalSpeed = round((key_right - key_left) * _walkSpeed);
+_horizontalSpeed = obj_input._horizontalSum * _walkSpeed;
    
 move_horizontally();
 
@@ -18,7 +9,7 @@ if (_horizontalSpeed != 0)
 }
 
 // Vertical movement
-var key_jump = gamepad_button_check_pressed(0, gp_face1);
+var key_jump = obj_input._jumpPressed;
 
 if (obj_game._abilities[ABILITIES.DOUBLEJUMP] == 1 && key_jump)
 {
@@ -46,7 +37,7 @@ if (set_is_on_ground())
     }
 }
 
-if (_verticalSpeed < 0 && !gamepad_button_check(0, gp_face1))
+if (_verticalSpeed < 0 && !obj_input._jumpHeld)
 {
     _verticalSpeed = max(_verticalSpeed, _jumpHeight / 4);
 }
