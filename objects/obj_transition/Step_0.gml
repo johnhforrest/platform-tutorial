@@ -1,28 +1,39 @@
 /// @description Animating the transition
 
-if (mode != TRANSITION_MODE.OFF)
+if (_mode != TRANSITION_MODE.OFF)
 {
-	if (mode == TRANSITION_MODE.INTRO)
+	if (_mode == TRANSITION_MODE.INTRO)
 	{
-		percent = max(0, percent - max((percent / 10), 0.005));
+		_percent = max(0, _percent - max((_percent / 10), 0.005));
 	}
 	else
 	{
-		percent = min(targetPercent, percent + max(((targetPercent - percent) / 10), 0.005));
+		_percent = min(_targetPercent, _percent + max(((_targetPercent - _percent) / 10), 0.005));
 	}
 	
-	if (percent == targetPercent || percent == 0)
+	if (_percent == _targetPercent || _percent == 0)
 	{
-		switch (mode)
+		switch (_mode)
 		{
 			case TRANSITION_MODE.NEXT:
-                mode = TRANSITION_MODE.INTRO
-                room_goto_next();
+                _mode = TRANSITION_MODE.INTRO
+                
+                var nextRoom = room_next(room);
+                nextRoom = room_exists(nextRoom) ? nextRoom : room_one;                
+                
+                obj_game._targetMarker = 0;
+                room_goto(nextRoom);
 				break;
 			
 			case TRANSITION_MODE.GOTO:
-                mode = TRANSITION_MODE.INTRO;
-                room_goto(target);
+                _mode = TRANSITION_MODE.INTRO;
+                
+                if (obj_game._targetMarker < 0)
+                {
+                    obj_game._targetMarker = 0;
+                }
+                
+                room_goto(_target);
 				break;
 			
 			case TRANSITION_MODE.RESTART:
@@ -30,11 +41,11 @@ if (mode != TRANSITION_MODE.OFF)
 				break;
 			
 			case TRANSITION_MODE.INTRO:
-                mode = TRANSITION_MODE.OFF;
+                _mode = TRANSITION_MODE.OFF;
 				break;
                 
             case TRANSITION_MODE.FINISHING_UP:
-                mode = TRANSITION_MODE.OFF;
+                _mode = TRANSITION_MODE.OFF;
                 break;
 		}
 	}

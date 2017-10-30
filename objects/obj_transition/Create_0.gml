@@ -1,7 +1,15 @@
 /// @description Setting up the transition object
-guiWidth = display_get_gui_width();
-guiHeight = display_get_gui_height();
-guiHeightHalf = guiHeight * 0.5;
+_guiWidth = display_get_gui_width();
+_guiHeight = display_get_gui_height();
+_guiHeightHalf = _guiHeight * 0.5;
+
+_mode = TRANSITION_MODE.INTRO;
+_percent = 1.2;
+_targetPercent = 1.2;
+_target = room;
+
+// Put this on top of everything else
+depth = -1000;
 
 enum TRANSITION_MODE
 {
@@ -12,11 +20,3 @@ enum TRANSITION_MODE
 	INTRO,
     FINISHING_UP
 };
-
-mode = TRANSITION_MODE.INTRO;
-percent = 1.2;
-targetPercent = 1.2;
-target = room;
-
-// Put this on top of everything else
-depth = -1000;

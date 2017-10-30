@@ -1,6 +1,7 @@
 /// @description Set up player object
 
 event_inherited();
+snap_to_vgrid(true);
 
 // Life
 _maxHitPoints = 3;
@@ -31,8 +32,3 @@ enum STATES
     FROZEN,
     DEAD
 }
-
-// Snap player to the grid
-y = y - (y % TILE_SIZE) + (TILE_SIZE - 1) - (bbox_bottom - y);
-
-global.debug_num_attacks = 0;
