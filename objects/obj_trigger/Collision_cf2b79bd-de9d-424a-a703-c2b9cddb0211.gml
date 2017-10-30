@@ -1,13 +1,9 @@
 /// @description Move to next room
 
-with (obj_player)
+if (obj_player._state != STATES.FROZEN)
 {
-    if (_state != STATES.FROZEN)
-    {
-        _state = STATES.FROZEN;
-        obj_game._targetRoom = other._targetRoom;
-        obj_game._targetMarker = other._targetMarker;
+    obj_player._state = STATES.FROZEN;
+    obj_game._targetMarker = _targetMarker;
         
-        slide_transition(TRANSITION_MODE.GOTO, obj_game._targetRoom);
-    }
+    slide_transition(TRANSITION_MODE.GOTO, _targetRoom);
 }

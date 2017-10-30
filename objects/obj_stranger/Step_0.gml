@@ -5,10 +5,7 @@ if (!instance_exists(obj_player))
     return;
 }
 
-var offSet = TILE_SIZE * 2;
-_playerNearby = obj_player._verticalSpeed = 0
-    && point_in_rectangle(obj_player.x, obj_player.y, x - offSet, y - offSet, x + offSet, y + offSet);
-
+_playerNearby = is_player_on_ground() && is_player_nearby(TILE_SIZE * 2);
 if (_playerNearby && !_talking && obj_input._verticalSum > 0)
 {
     _talking = true;

@@ -21,15 +21,19 @@ if (_mode != TRANSITION_MODE.OFF)
                 var nextRoom = room_next(room);
                 nextRoom = room_exists(nextRoom) ? nextRoom : room_one;                
                 
-                obj_game._targetRoom = nextRoom;
                 obj_game._targetMarker = 0;
+                room_goto(nextRoom);
 				break;
 			
 			case TRANSITION_MODE.GOTO:
                 _mode = TRANSITION_MODE.INTRO;
-                obj_game._targetRoom = target;
-                obj_game._targetMarker = 0;
-                room_goto(target);
+                
+                if (obj_game._targetMarker < 0)
+                {
+                    obj_game._targetMarker = 0;
+                }
+                
+                room_goto(_target);
 				break;
 			
 			case TRANSITION_MODE.RESTART:

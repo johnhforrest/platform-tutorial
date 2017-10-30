@@ -1,3 +1,9 @@
+/// @function draw_health
+/// @param {number} xPos x position
+/// @param {number} yPos y position
+/// @param {number} hitPoints Current number of hit points
+/// @param {number} maxHitPoints Maximum number of hit points
+
 var xPos = argument0;
 var yPos = argument1;
 var hitPoints = argument2;

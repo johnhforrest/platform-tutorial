@@ -4,7 +4,6 @@ _previousState = PAUSE_STATES.UNPAUSED;
 _state = PAUSE_STATES.WAITING;
 
 // Game data
-_targetRoom = noone;
 _targetMarker = -1;
 _pickups = ds_map_create();
 
