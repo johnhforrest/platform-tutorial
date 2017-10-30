@@ -16,7 +16,8 @@
         "155c8e41-fa5a-4d3e-a15e-88b88680472e",
         "c1592e72-b6d5-4250-9631-798180969f6c",
         "074c9722-172f-4ab8-96f4-1ac9dfa747ba",
-        "b60ef64e-c2d1-41d6-98ea-9fc6707349bc"
+        "b60ef64e-c2d1-41d6-98ea-9fc6707349bc",
+        "42fac8c4-62fb-4549-8485-a34d23c2c943"
     ],
     "IsDnD": false,
     "layers": [
@@ -54,9 +55,35 @@
         },
         {
             "__type": "GMRInstanceLayer_Model:#YoYoStudio.MVCFormat",
+            "name": "Characters",
+            "id": "54a74f89-fa7d-45fa-916e-cdc8f52999d8",
+            "depth": 100,
+            "grid_x": 32,
+            "grid_y": 32,
+            "hierarchyFrozen": false,
+            "hierarchyVisible": true,
+            "inheritLayerDepth": false,
+            "inheritLayerSettings": false,
+            "inheritSubLayers": false,
+            "inheritVisibility": false,
+            "instances": [
+                {"name": "inst_230FDF53","id": "42fac8c4-62fb-4549-8485-a34d23c2c943","colour": { "Value": 4294967295 },"creationCodeFile": "","creationCodeType": "","ignore": false,"inheritCode": false,"inheritItemSettings": false,"IsDnD": false,"m_originalParentID": "00000000-0000-0000-0000-000000000000","m_serialiseFrozen": false,"modelName": "GMRInstance","name_with_no_file_rename": "inst_230FDF53","objId": "56342616-e640-4518-b94f-cd490fe6c4e8","rotation": 0,"scaleX": 1,"scaleY": 1,"mvc": "1.0","x": 480,"y": 416}
+            ],
+            "layers": [
+
+            ],
+            "m_parentID": "00000000-0000-0000-0000-000000000000",
+            "m_serialiseFrozen": false,
+            "modelName": "GMRInstanceLayer",
+            "mvc": "1.0",
+            "userdefined_depth": false,
+            "visible": true
+        },
+        {
+            "__type": "GMRInstanceLayer_Model:#YoYoStudio.MVCFormat",
             "name": "Enemies",
             "id": "4f792236-b40e-4ed0-af93-b551f3b15e34",
-            "depth": 100,
+            "depth": 200,
             "grid_x": 32,
             "grid_y": 32,
             "hierarchyFrozen": false,
@@ -84,7 +111,7 @@
             "__type": "GMRTileLayer_Model:#YoYoStudio.MVCFormat",
             "name": "Spikes",
             "id": "3a9cd504-71df-4dc0-91ca-372c0d88b0bb",
-            "depth": 200,
+            "depth": 300,
             "grid_x": 32,
             "grid_y": 32,
             "hierarchyFrozen": false,
@@ -151,7 +178,7 @@
             "__type": "GMRTileLayer_Model:#YoYoStudio.MVCFormat",
             "name": "WallTiles",
             "id": "215576d6-ba0a-44f0-87f1-ffb20f5f867b",
-            "depth": 300,
+            "depth": 400,
             "grid_x": 32,
             "grid_y": 32,
             "hierarchyFrozen": false,
@@ -218,7 +245,7 @@
             "__type": "GMRTileLayer_Model:#YoYoStudio.MVCFormat",
             "name": "Tiles",
             "id": "35428bce-3506-4f1b-a346-2510b44a1dc0",
-            "depth": 400,
+            "depth": 500,
             "grid_x": 32,
             "grid_y": 32,
             "hierarchyFrozen": false,
@@ -288,7 +315,7 @@
             "animationFPS": 15,
             "animationSpeedType": "0",
             "colour": { "Value": 4294967040 },
-            "depth": 500,
+            "depth": 600,
             "grid_x": 32,
             "grid_y": 32,
             "hierarchyFrozen": false,
