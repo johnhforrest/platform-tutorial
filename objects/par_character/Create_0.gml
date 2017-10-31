@@ -7,3 +7,12 @@ _selfGravity = 0.5;
 _walkSpeed = 4;
 _timer = true;
 _tileMap = layer_tilemap_get_id("WallTiles");
+
+enum STATES
+{
+    DEFAULT,
+    KNOCKBACK,
+    DASHING,
+    FROZEN,
+    DEAD
+}

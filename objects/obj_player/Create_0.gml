@@ -23,12 +23,3 @@ _doubleJumpAvailable = false;
 
 // Player state
 _state = STATES.DEFAULT;
-
-enum STATES
-{
-    DEFAULT,
-    KNOCKBACK,
-    DASHING,
-    FROZEN,
-    DEAD
-}
