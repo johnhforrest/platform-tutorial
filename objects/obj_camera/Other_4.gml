@@ -8,3 +8,5 @@ if (instance_exists(_target))
     x = _target.x;
     y = _target.y;
 }
+
+camera_set_view_pos(view_camera[0], x - (_width / 2), y - (_height / 2));
