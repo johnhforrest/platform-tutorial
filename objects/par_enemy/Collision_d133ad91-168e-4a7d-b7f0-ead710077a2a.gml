@@ -21,5 +21,6 @@ if (_state != STATES.DEAD && !ds_map_exists(other._enemiesHit, id))
         _state = STATES.KNOCKBACK;
     }
 
+    effect_create_above(ef_flare, bbox_left, y, 3, c_white);
     _state = STATES.KNOCKBACK;
 }
