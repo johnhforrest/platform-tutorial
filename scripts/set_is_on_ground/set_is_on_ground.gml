@@ -3,6 +3,11 @@
 
 if (tile_vcollision(_tileMap, 1))
 {
+    if (_verticalSpeed > obj_game._groundShakeTheshold)
+    {
+        shake_screen(6, 60);
+    }
+
     _verticalSpeed = 0;
     _timer = false;
     
