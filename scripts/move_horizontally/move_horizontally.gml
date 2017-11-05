@@ -7,10 +7,7 @@ var preferGround = argument_count > 1 ? argument[1] : false;
 // Horizontal movement
 if (tile_hcollision(_tileMap, _horizontalSpeed))
 {
-    // if we have a collision, snap to the tile grid (i.e., close the remaining distance to the wall but not over)
-	x = _horizontalSpeed > 0
-		? x - (x % TILE_SIZE) + (TILE_SIZE - 1) - (bbox_right - x)
-		: x - (x % TILE_SIZE) - (bbox_left - x);
+	snap_to_hgrid(_horizontalSpeed > 0);
 	
 	_horizontalSpeed *= collisionMultiplier;
 }

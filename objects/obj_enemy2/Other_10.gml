@@ -28,6 +28,9 @@ if (set_is_on_ground())
 
 move_vertically();
 
+_xScale = lerp(_xScale, image_xscale, .1);
+_yScale = lerp(_yScale, image_yscale, .1);
+
 if (point_distance(x, y, obj_player.x, obj_player.y) > _aggroRadius)
 {
     _state = STATES.FROZEN;

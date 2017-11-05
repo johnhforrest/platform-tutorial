@@ -13,7 +13,7 @@ var key_jump = obj_input._jumpPressed;
 
 if (obj_game._abilities[ABILITIES.DOUBLEJUMP] == 1 && key_jump)
 {
-	_verticalSpeed = _jumpHeight;
+	jump();
 	obj_game._abilities[ABILITIES.DOUBLEJUMP] = 0;
 }
 
@@ -33,7 +33,7 @@ if (set_is_on_ground())
     
     if (key_jump)
     {
-        _verticalSpeed = _jumpHeight;
+        jump();
     }
 }
 
@@ -43,3 +43,6 @@ if (_verticalSpeed < 0 && !obj_input._jumpHeld)
 }
 
 move_vertically();
+
+_xScale = lerp(_xScale, image_xscale, .1);
+_yScale = lerp(_yScale, image_yscale, .1);

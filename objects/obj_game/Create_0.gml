@@ -5,6 +5,7 @@ _state = PAUSE_STATES.WAITING;
 
 // Game data
 _targetMarker = -1;
+_groundShakeTheshold = 20;
 _pickups = ds_map_create();
 
 // Pause data

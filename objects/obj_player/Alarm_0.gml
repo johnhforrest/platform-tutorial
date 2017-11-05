@@ -1,3 +1,3 @@
-/// @description Leave dash state
+/// @description Reset state
 
 _state = STATES.DEFAULT;

@@ -3,6 +3,8 @@
 
 if (tile_vcollision(_tileMap, 1))
 {
+    animate_vertical_collision();
+
     _verticalSpeed = 0;
     _timer = false;
     
