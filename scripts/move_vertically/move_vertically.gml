@@ -19,7 +19,7 @@ if (tile_vcollision(_tileMap, _verticalSpeed))
     // if we have a collision, snap to the tile grid (i.e., close the remaining distance to the wall but not over)
     snap_to_vgrid(_verticalSpeed > 0);
     
-    animate_ground_slam();
+    animate_vertical_collision();
 	
     _verticalSpeed *= collisionMultiplier;
     _timer = false;

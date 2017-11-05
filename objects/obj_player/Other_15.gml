@@ -1,5 +1,4 @@
-/// @description Insert description here
-move_vertically();
+/// @description Slam state
 
 _tempY = lerp(_tempY, y, .05);
 _xScale = lerp(_xScale, image_xscale, .05);

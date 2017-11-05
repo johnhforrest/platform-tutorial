@@ -1,8 +1,8 @@
 {
-    "id": "0f6d9db3-4fc0-4703-a478-813ae0bf688c",
+    "id": "85196630-cb08-495d-a215-afb4856b7add",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "animate_ground_slam",
+    "name": "jump",
     "IsCompatibility": false,
     "IsDnD": false
 }

@@ -13,7 +13,7 @@ var key_jump = obj_input._jumpPressed;
 
 if (obj_game._abilities[ABILITIES.DOUBLEJUMP] == 1 && key_jump)
 {
-	_verticalSpeed = _jumpHeight;
+	jump();
 	obj_game._abilities[ABILITIES.DOUBLEJUMP] = 0;
 }
 
@@ -33,10 +33,7 @@ if (set_is_on_ground())
     
     if (key_jump)
     {
-        _verticalSpeed = _jumpHeight;
-        
-        _xScale *= .4;
-        _yScale *= 1.5;
+        jump();
     }
 }
 
