@@ -34,6 +34,9 @@ if (set_is_on_ground())
     if (key_jump)
     {
         _verticalSpeed = _jumpHeight;
+        
+        _xScale *= .4;
+        _yScale *= 1.5;
     }
 }
 
@@ -43,3 +46,6 @@ if (_verticalSpeed < 0 && !obj_input._jumpHeld)
 }
 
 move_vertically();
+
+_xScale = lerp(_xScale, image_xscale, .1);
+_yScale = lerp(_yScale, image_yscale, .1);

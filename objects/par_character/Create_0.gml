@@ -10,9 +10,10 @@ _tileMap = layer_tilemap_get_id("WallTiles");
 
 enum STATES
 {
-    DEFAULT,
-    KNOCKBACK,
-    DASHING,
-    FROZEN,
-    DEAD
+    DEFAULT,    // 0
+    KNOCKBACK,  // 1
+    DASHING,    // 2
+    FROZEN,     // 3
+    DEAD,       // 4
+    SLAM        // 5
 }

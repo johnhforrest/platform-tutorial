@@ -44,6 +44,7 @@ else
 // Transition to dash state
 if (obj_game._abilities[ABILITIES.DASH] == 1 && obj_input._dashPressed)
 {
+    _xScale = image_xscale;
     _horizontalSpeed = sign(image_xscale) * _walkSpeed * 3;
     _verticalSpeed = 0;
     obj_game._abilities[ABILITIES.DASH] = _dashLength;
