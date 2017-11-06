@@ -1,7 +1,63 @@
 /// @description Default state
 
-// Performing both horizontal and vertical movement
-move_player();
+// Calculating horizontal movement
+_horizontalSpeed = obj_input._horizontalSum * _walkSpeed;
+   
+// Calculating vertical movement
+var key_jump = obj_input._jumpPressed;
+
+if (obj_game._abilities[ABILITIES.DOUBLEJUMP] == 1 && key_jump)
+{
+	jump();
+	obj_game._abilities[ABILITIES.DOUBLEJUMP] = 0;
+}
+
+if (set_is_on_ground())
+{
+    // We are on the ground, reset jump state
+    if (obj_game._abilities[ABILITIES.DOUBLEJUMP] != -1)
+    {
+    	obj_game._abilities[ABILITIES.DOUBLEJUMP] = 1;
+    }
+    
+    // We are on the ground, reset dash state
+    if (obj_game._abilities[ABILITIES.DASH] != -1)
+    {
+        obj_game._abilities[ABILITIES.DASH] = 1;
+    }
+    
+    if (key_jump)
+    {
+        jump();
+    }
+}
+
+// Stop increasing jump height if button is let go
+// This allows for precise platforming
+if (_verticalSpeed < 0 && !obj_input._jumpHeld)
+{
+    _verticalSpeed = max(_verticalSpeed, _jumpHeight / 4);
+}
+
+move_horizontally();
+move_vertically();
+set_sprite_scale();
+
+// Transition to dash state
+if (obj_game._abilities[ABILITIES.DASH] == 1 && obj_input._dashPressed)
+{
+    _xScale = image_xscale;
+    _horizontalSpeed = sign(image_xscale) * _walkSpeed * 3;
+    _verticalSpeed = 0;
+    obj_game._abilities[ABILITIES.DASH] = _dashLength;
+    _state = STATES.DASHING;
+}
+
+// Creating dust effect when moving
+if ((abs(_horizontalSpeed) > 0 || abs(_verticalSpeed) > 0) && alarm[1] <= 0)
+{
+    alarm[1] = 3;
+}
 
 // Calculate attack
 if (_cooldown == 0)
@@ -39,14 +95,4 @@ if (_cooldown == 0)
 else
 {
     _cooldown--;
-}
-
-// Transition to dash state
-if (obj_game._abilities[ABILITIES.DASH] == 1 && obj_input._dashPressed)
-{
-    _xScale = image_xscale;
-    _horizontalSpeed = sign(image_xscale) * _walkSpeed * 3;
-    _verticalSpeed = 0;
-    obj_game._abilities[ABILITIES.DASH] = _dashLength;
-    _state = STATES.DASHING;
 }

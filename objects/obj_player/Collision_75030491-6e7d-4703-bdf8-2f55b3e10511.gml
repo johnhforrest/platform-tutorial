@@ -11,6 +11,8 @@ if (_invincibilityFrames == 0 && other._state != STATES.DEAD)
         hit_player(_attackPower, -hKnockback, -vKnockback);
         _horizontalSpeed = hKnockback;
         _veritcalSpeed = vKnockback;
+        
+        alarm[0] = floor(game_get_speed(gamespeed_fps) / 3);
         _state = STATES.KNOCKBACK;
     }
 }

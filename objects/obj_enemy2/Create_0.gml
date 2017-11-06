@@ -15,5 +15,3 @@ _hitPoints = 8;
 // Attack
 _attackPower = 0;
 _knockbackAmount = 16;
-
-_state = STATES.DEFAULT;

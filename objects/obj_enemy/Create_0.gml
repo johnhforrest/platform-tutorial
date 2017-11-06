@@ -12,5 +12,3 @@ _hitPoints = 4;
 
 // Attack
 _attackPower = 1;
-
-_state = STATES.DEFAULT;
