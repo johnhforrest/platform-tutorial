@@ -3,10 +3,10 @@
 event_inherited();
 snap_to_vgrid(true);
 
-// Sprite state
-_xScale = image_xscale;
-_yScale = image_yscale;
-_tempY = 0;
+// Movement
+_maxHorizontalSpeed = 6;
+_acceleration = 1.3;
+_friction = 0.3;
 
 // Life
 _maxHitPoints = 3;
@@ -25,6 +25,3 @@ _dashLength = 15;
 // Jumping
 _jumpHeight = -12;
 _doubleJumpAvailable = false;
-
-// Player state
-_state = STATES.DEFAULT;

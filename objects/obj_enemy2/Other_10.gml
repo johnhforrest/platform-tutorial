@@ -1,6 +1,12 @@
 /// @description Default state
 
+if (set_is_on_ground())
+{
+    _verticalSpeed = _bounceHeight;
+}
+
 move_horizontally();
+move_vertically();
 
 if (obj_player.x + TILE_SIZE < x)
 {
@@ -20,13 +26,6 @@ else if (obj_player.x - TILE_SIZE > x)
         _horizontalSpeed *= -1;
     }
 }
-
-if (set_is_on_ground())
-{
-    _verticalSpeed = _bounceHeight;
-}
-
-move_vertically();
 
 _xScale = lerp(_xScale, image_xscale, .1);
 _yScale = lerp(_yScale, image_yscale, .1);

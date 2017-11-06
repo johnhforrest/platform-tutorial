@@ -18,6 +18,8 @@ if (_state != STATES.DEAD && !ds_map_exists(other._enemiesHit, id))
     {
         _horizontalSpeed = -hKnockback / 2;
         _verticalSpeed = -vKnockback * 2;
+        
+        alarm[0] = floor(game_get_speed(gamespeed_fps) / 6);
         _state = STATES.KNOCKBACK;
     }
 

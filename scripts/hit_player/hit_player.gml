@@ -10,6 +10,5 @@ if (obj_player._invincibilityFrames == 0)
     with (obj_player)
     {
         _invincibilityFrames = game_get_speed(gamespeed_fps);
-        image_index = 1;
     }
 }

@@ -11,5 +11,7 @@ with (object)
     _horizontalSpeed = hKnockbackSpeed;
     _verticalSpeed = vKnockbackSpeed;
     _timer = false;
+    
+    alarm[0] = floor(game_get_speed(gamespeed_fps) / 3);
     _state = STATES.KNOCKBACK
 }
