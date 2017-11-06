@@ -1,7 +1,15 @@
 /// @description Default state
 
 // Calculating horizontal movement
-_horizontalSpeed = obj_input._horizontalSum * _walkSpeed;
+if (obj_input._horizontalSum != 0)
+{
+    _horizontalSpeed = obj_input._horizontalSum * _walkSpeed * _acceleration;
+    _horizontalSpeed = clamp(_horizontalSpeed, -_maxHorizontalSpeed, _maxHorizontalSpeed);
+}
+else
+{
+    _horizontalSpeed = lerp(_horizontalSpeed, 0, _friction);
+}
    
 // Calculating vertical movement
 var key_jump = obj_input._jumpPressed;

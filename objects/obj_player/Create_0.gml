@@ -3,6 +3,11 @@
 event_inherited();
 snap_to_vgrid(true);
 
+// Movement
+_maxHorizontalSpeed = 6;
+_acceleration = 1.3;
+_friction = 0.3;
+
 // Life
 _maxHitPoints = 3;
 _hitPoints = _maxHitPoints;
