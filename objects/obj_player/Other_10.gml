@@ -97,7 +97,9 @@ if (_cooldown == 0)
             }
         }
         
+        sprite_index = spr_player_attack_right;
         _cooldown = _cooldownReset;
+        alarm[0] = _cooldown;
     }
 }
 else

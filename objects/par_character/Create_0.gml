@@ -23,5 +23,6 @@ enum STATES
     DASHING,    // 2
     FROZEN,     // 3
     DEAD,       // 4
-    SLAM        // 5
+    SLAM,       // 5
+    ATTACK      // 6
 }

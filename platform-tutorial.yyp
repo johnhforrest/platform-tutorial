@@ -63,6 +63,14 @@
             }
         },
         {
+            "Key": "086a8e06-6373-4d9f-877c-06182254c546",
+            "Value": {
+                "id": "35f729ba-f58d-405a-9700-74b12610ea72",
+                "resourcePath": "sprites\\spr_player_attack_right\\spr_player_attack_right.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "0ee3d4f7-0750-4798-9ff3-de16fa8080d9",
             "Value": {
                 "id": "fb57fc0a-a751-417d-9ca6-35c56b16676c",
