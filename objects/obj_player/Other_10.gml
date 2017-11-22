@@ -67,10 +67,12 @@ if (obj_game._abilities[ABILITIES.DASH] == 1 && obj_input._dashPressed)
 }
 
 // Creating dust effect when moving
+/*
 if ((abs(_horizontalSpeed) > 0 || abs(_verticalSpeed) > 0) && alarm[1] <= 0)
 {
     alarm[1] = 3;
 }
+*/
 
 // Calculate attack
 if (_cooldown == 0)
