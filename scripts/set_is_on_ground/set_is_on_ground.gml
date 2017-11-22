@@ -3,6 +3,7 @@
 
 if (tile_vcollision(_tileMap, 1))
 {
+    snap_to_vgrid(true);
     animate_vertical_collision();
 
     _verticalSpeed = 0;

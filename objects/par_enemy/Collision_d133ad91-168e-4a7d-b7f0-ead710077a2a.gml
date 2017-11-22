@@ -16,13 +16,13 @@ if (_state != STATES.DEAD && !ds_map_exists(other._enemiesHit, id))
     
     with (obj_player)
     {
-        _horizontalSpeed = -hKnockback / 2;
-        _verticalSpeed = -vKnockback * 2;
+        //_horizontalSpeed = -hKnockback / 2;
+        //_verticalSpeed = -vKnockback * 2;
         
-        alarm[0] = floor(game_get_speed(gamespeed_fps) / 6);
-        _state = STATES.KNOCKBACK;
+        //alarm[0] = floor(game_get_speed(gamespeed_fps) / 6);
+        //_state = STATES.KNOCKBACK;
     }
 
-    effect_create_above(ef_flare, bbox_left, y, 3, c_white);
-    _state = STATES.KNOCKBACK;
+    //effect_create_above(ef_flare, bbox_left, y, 3, c_white);
+    //_state = STATES.KNOCKBACK;
 }
