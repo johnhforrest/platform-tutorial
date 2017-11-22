@@ -1,5 +1,10 @@
 /// @description Default state
 
+if (obj_input._horizontalSum != 0 || obj_input._verticalSum != 0)
+{
+    _directionFacing = round(point_direction(0, 0, obj_input._horizontalSum, -obj_input._verticalSum) / 90) % 4;
+}
+
 // Calculating horizontal movement
 if (obj_input._horizontalSum != 0)
 {
@@ -95,22 +100,6 @@ if (_cooldown == 0)
                  x += (offset * other.image_xscale)
                 _direction = point_direction(other.x, other.y, x, y);
             }
-        }
-        
-        // TODO: Move this logic to a lookup table
-        var directionFacing = round(point_direction(0, 0, obj_input._horizontalSum, -obj_input._verticalSum) / 90) % 4;
-        
-        if (directionFacing == 1)
-        {
-            sprite_index = spr_player_attack_up;
-        }
-        else if (directionFacing == 3)
-        {
-            sprite_index = spr_player_attack_down;
-        }
-        else
-        {
-            sprite_index = spr_player_attack_right;
         }
         
         audio_sound_pitch(sound_swipe, random_range(0.8, 1.2));

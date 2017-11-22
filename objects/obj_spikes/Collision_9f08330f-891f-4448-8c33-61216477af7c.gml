@@ -1,3 +1,3 @@
-/// @description Collision with enemy
+/// @description Collision with character
 
 instance_destroy(other);
