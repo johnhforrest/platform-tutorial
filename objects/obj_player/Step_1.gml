@@ -11,3 +11,5 @@ if (_invincibilityFrames > 0)
 {
     _invincibilityFrames--;
 }
+
+sprite_index = _sprite[_state, _directionFacing];

@@ -1,5 +1,10 @@
 /// @description Default state
 
+if (obj_input._horizontalSum != 0 || obj_input._verticalSum != 0)
+{
+    _directionFacing = round(point_direction(0, 0, obj_input._horizontalSum, -obj_input._verticalSum) / 90) % 4;
+}
+
 // Calculating horizontal movement
 if (obj_input._horizontalSum != 0)
 {
@@ -97,7 +102,11 @@ if (_cooldown == 0)
             }
         }
         
+        audio_sound_pitch(sound_swipe, random_range(0.8, 1.2));
+        audio_play_sound(sound_swipe, 1, false);
+        image_speed = 0.8;
         _cooldown = _cooldownReset;
+        _state = STATES.ATTACK;
     }
 }
 else
