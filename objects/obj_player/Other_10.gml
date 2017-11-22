@@ -113,6 +113,8 @@ if (_cooldown == 0)
             sprite_index = spr_player_attack_right;
         }
         
+        audio_sound_pitch(sound_swipe, random_range(0.8, 1.2));
+        audio_play_sound(sound_swipe, 1, false);
         image_speed = 0.8;
         _cooldown = _cooldownReset;
         _state = STATES.ATTACK;

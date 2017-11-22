@@ -839,6 +839,14 @@
             }
         },
         {
+            "Key": "e50ce33b-98da-480f-a200-222f416939ca",
+            "Value": {
+                "id": "0a757dea-bd29-4af9-bf27-ee0d3f6333a6",
+                "resourcePath": "sounds\\sound_swipe\\sound_swipe.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "e5337a4e-df1f-45fb-bef2-8f6743ec662e",
             "Value": {
                 "id": "8f2cd1de-3338-44b6-9ffd-36716da6a6d3",
