@@ -97,9 +97,25 @@ if (_cooldown == 0)
             }
         }
         
-        sprite_index = spr_player_attack_right;
+        // TODO: Move this logic to a lookup table
+        var directionFacing = round(point_direction(0, 0, obj_input._horizontalSum, -obj_input._verticalSum) / 90) % 4;
+        
+        if (directionFacing == 1)
+        {
+            sprite_index = spr_player_attack_up;
+        }
+        else if (directionFacing == 3)
+        {
+            sprite_index = spr_player_attack_down;
+        }
+        else
+        {
+            sprite_index = spr_player_attack_right;
+        }
+        
+        image_speed = 0.8;
         _cooldown = _cooldownReset;
-        alarm[0] = _cooldown;
+        _state = STATES.ATTACK;
     }
 }
 else

@@ -26,3 +26,11 @@ enum STATES
     SLAM,       // 5
     ATTACK      // 6
 }
+
+enum DIRECTION
+{
+    RIGHT,
+    UP,
+    LEFT,
+    DOWN
+}

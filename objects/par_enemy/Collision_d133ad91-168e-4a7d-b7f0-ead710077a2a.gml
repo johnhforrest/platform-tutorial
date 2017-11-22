@@ -7,10 +7,10 @@ if (_state != STATES.DEAD && !ds_map_exists(other._enemiesHit, id))
     var hKnockback = floor(lengthdir_x(8, other._direction));
     var vKnockback = 0;
     
-    if (other._direction == 90 || other._direction == 270)
-    {
-        vKnockback = floor(lengthdir_y(8, other._direction));
-    }
+    //if (other._direction == 90 || other._direction == 270)
+    //{
+    //    vKnockback = floor(lengthdir_y(8, other._direction));
+    //}
     
     hit_character(self, obj_player._attackPower, hKnockback, vKnockback);
     
