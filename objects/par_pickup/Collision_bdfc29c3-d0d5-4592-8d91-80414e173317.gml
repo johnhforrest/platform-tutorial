@@ -6,7 +6,7 @@ if (!_pickedUp)
     
     with (other)
     {
-        _state = STATES.FROZEN;
+        _state = PLAYER_STATES.FROZEN;
         obj_game._pickups[? other.id] = true;
         
         if (other._abilityIndex > 0)

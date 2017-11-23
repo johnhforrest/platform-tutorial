@@ -29,7 +29,7 @@ _yScale = lerp(_yScale, image_yscale, .1);
 
 if (point_distance(x, y, obj_player.x, obj_player.y) > _aggroRadius)
 {
-    _state = STATES.FROZEN;
+    _state = PLAYER_STATES.FROZEN;
 }
 
 move_horizontally();

@@ -22,5 +22,5 @@ if (obj_game._abilities[ABILITIES.DASH] > 0)
 }
 else
 {
-    _state = STATES.DEFAULT;
+    _state = PLAYER_STATES.DEFAULT;
 }

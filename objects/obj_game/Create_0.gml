@@ -40,7 +40,7 @@ enum PAUSE_STATES
     UNPAUSED,
     PAUSED,
     WAITING
-}
+};
 
 enum ABILITIES
 {
@@ -48,6 +48,14 @@ enum ABILITIES
     DASH,
     DOUBLEJUMP,
     COUNT
+};
+
+enum DIRECTION
+{
+    RIGHT,
+    UP,
+    LEFT,
+    DOWN
 };
 
 show_debug_message("Created obj_game");

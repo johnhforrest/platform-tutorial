@@ -1,6 +1,6 @@
 /// @description Collision with weapon
 
-if (_state != STATES.DEAD && !ds_map_exists(other._enemiesHit, id))
+if (_state != PLAYER_STATES.DEAD && !ds_map_exists(other._enemiesHit, id))
 {
     ds_map_add(other._enemiesHit, id, true);
     
@@ -20,9 +20,9 @@ if (_state != STATES.DEAD && !ds_map_exists(other._enemiesHit, id))
         //_verticalSpeed = -vKnockback * 2;
         
         //alarm[0] = floor(game_get_speed(gamespeed_fps) / 6);
-        //_state = STATES.KNOCKBACK;
+        //_state = PLAYER_STATES.KNOCKBACK;
     }
 
     //effect_create_above(ef_flare, bbox_left, y, 3, c_white);
-    //_state = STATES.KNOCKBACK;
+    //_state = PLAYER_STATES.KNOCKBACK;
 }

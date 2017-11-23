@@ -1,7 +1,12 @@
 /// @description Set up player object
 
-event_inherited();
+init_movement_object();
 snap_to_vgrid(true);
+
+// Sprite state
+_xScale = image_xscale;
+_yScale = image_yscale;
+_tempY = 0;
 
 // Movement
 _maxHorizontalSpeed = 6;
@@ -27,27 +32,42 @@ _dashLength = 15;
 _jumpHeight = -12;
 _doubleJumpAvailable = false;
 
-_sprite[STATES.DEFAULT, DIRECTION.RIGHT] = spr_player_right;
-_sprite[STATES.DEFAULT, DIRECTION.UP] = spr_player_right;
-_sprite[STATES.DEFAULT, DIRECTION.LEFT] = spr_player_right;
-_sprite[STATES.DEFAULT, DIRECTION.DOWN] = spr_player_right;
+// Player state
+_state = PLAYER_STATES.DEFAULT;
 
-_sprite[STATES.DASHING, DIRECTION.RIGHT] = spr_player_right;
-_sprite[STATES.DASHING, DIRECTION.UP] = spr_player_right;
-_sprite[STATES.DASHING, DIRECTION.LEFT] = spr_player_right;
-_sprite[STATES.DASHING, DIRECTION.DOWN] = spr_player_right;
+enum PLAYER_STATES
+{
+    DEFAULT,    // 0
+    KNOCKBACK,  // 1
+    DASHING,    // 2
+    FROZEN,     // 3
+    DEAD,       // 4
+    SLAM,       // 5
+    ATTACK      // 6
+}
 
-_sprite[STATES.FROZEN, DIRECTION.RIGHT] = spr_player_right;
-_sprite[STATES.FROZEN, DIRECTION.UP] = spr_player_right;
-_sprite[STATES.FROZEN, DIRECTION.LEFT] = spr_player_right;
-_sprite[STATES.FROZEN, DIRECTION.DOWN] = spr_player_right;
+// Sprite lookup table
+_sprite[PLAYER_STATES.DEFAULT, DIRECTION.RIGHT] = spr_player_right;
+_sprite[PLAYER_STATES.DEFAULT, DIRECTION.UP] = spr_player_right;
+_sprite[PLAYER_STATES.DEFAULT, DIRECTION.LEFT] = spr_player_right;
+_sprite[PLAYER_STATES.DEFAULT, DIRECTION.DOWN] = spr_player_right;
 
-_sprite[STATES.SLAM, DIRECTION.RIGHT] = spr_player_right;
-_sprite[STATES.SLAM, DIRECTION.UP] = spr_player_right;
-_sprite[STATES.SLAM, DIRECTION.LEFT] = spr_player_right;
-_sprite[STATES.SLAM, DIRECTION.DOWN] = spr_player_right;
+_sprite[PLAYER_STATES.DASHING, DIRECTION.RIGHT] = spr_player_right;
+_sprite[PLAYER_STATES.DASHING, DIRECTION.UP] = spr_player_right;
+_sprite[PLAYER_STATES.DASHING, DIRECTION.LEFT] = spr_player_right;
+_sprite[PLAYER_STATES.DASHING, DIRECTION.DOWN] = spr_player_right;
 
-_sprite[STATES.ATTACK, DIRECTION.RIGHT] = spr_player_attack_right;
-_sprite[STATES.ATTACK, DIRECTION.UP] = spr_player_attack_up;
-_sprite[STATES.ATTACK, DIRECTION.LEFT] = spr_player_attack_right;
-_sprite[STATES.ATTACK, DIRECTION.DOWN] = spr_player_attack_down;
+_sprite[PLAYER_STATES.FROZEN, DIRECTION.RIGHT] = spr_player_right;
+_sprite[PLAYER_STATES.FROZEN, DIRECTION.UP] = spr_player_right;
+_sprite[PLAYER_STATES.FROZEN, DIRECTION.LEFT] = spr_player_right;
+_sprite[PLAYER_STATES.FROZEN, DIRECTION.DOWN] = spr_player_right;
+
+_sprite[PLAYER_STATES.SLAM, DIRECTION.RIGHT] = spr_player_right;
+_sprite[PLAYER_STATES.SLAM, DIRECTION.UP] = spr_player_right;
+_sprite[PLAYER_STATES.SLAM, DIRECTION.LEFT] = spr_player_right;
+_sprite[PLAYER_STATES.SLAM, DIRECTION.DOWN] = spr_player_right;
+
+_sprite[PLAYER_STATES.ATTACK, DIRECTION.RIGHT] = spr_player_attack_right;
+_sprite[PLAYER_STATES.ATTACK, DIRECTION.UP] = spr_player_attack_up;
+_sprite[PLAYER_STATES.ATTACK, DIRECTION.LEFT] = spr_player_attack_right;
+_sprite[PLAYER_STATES.ATTACK, DIRECTION.DOWN] = spr_player_attack_down;

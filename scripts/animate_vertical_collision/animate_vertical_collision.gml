@@ -12,7 +12,7 @@ if (_verticalSpeed > obj_game._groundShakeTheshold)
     effect_create_below(ef_smoke, bbox_right + 8, bbox_bottom, 1, c_ltgray);
     
     alarm[0] = game_get_speed(gamespeed_fps);
-    _state = STATES.SLAM;
+    _state = PLAYER_STATES.SLAM;
 }
 else if (_verticalSpeed > 2)
 {

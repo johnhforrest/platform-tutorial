@@ -100,7 +100,7 @@
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 1,
+            "enumb": 0,
             "eventtype": 3,
             "m_owner": "a4148616-9651-45b6-86b3-bdb330216ba1"
         },
@@ -146,7 +146,7 @@
         }
     ],
     "maskSpriteId": "80247e8b-948f-45d2-9997-d2dd53ba4549",
-    "parentObjectId": "357fb4c7-5bfc-4c3e-8e19-d46617b2bc2c",
+    "parentObjectId": "00000000-0000-0000-0000-000000000000",
     "persistent": true,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,

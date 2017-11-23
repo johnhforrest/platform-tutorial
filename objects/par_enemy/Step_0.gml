@@ -1,4 +1,4 @@
-/// @description Run character state
+/// @description Run enemy state
 
 if (!instance_exists(obj_player))
 {
