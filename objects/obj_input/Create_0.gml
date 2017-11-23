@@ -1,5 +1,7 @@
 /// @description Initializing input values
 
+_gamepadInput = true;
+
 _jumpPressed = false;
 _jumpHeld = false;
 
