@@ -5,22 +5,12 @@
     "name": "par_enemy",
     "eventList": [
         {
-            "id": "8d7bbb24-9075-4c86-a218-5ee273a90704",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 1,
-            "eventtype": 3,
-            "m_owner": "51ad49c7-47a7-46f9-b496-dba20e0ddeb8"
-        },
-        {
             "id": "070df468-66cc-4633-b13f-d466c6712193",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 14,
+            "enumb": 12,
             "eventtype": 7,
             "m_owner": "51ad49c7-47a7-46f9-b496-dba20e0ddeb8"
         },

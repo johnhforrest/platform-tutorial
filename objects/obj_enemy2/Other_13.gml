@@ -2,5 +2,5 @@
 
 if (point_distance(x, y, obj_player.x, obj_player.y) <= _aggroRadius)
 {
-    _state = PLAYER_STATES.DEFAULT;
+    _state = ENEMY_STATES.DEFAULT;
 }

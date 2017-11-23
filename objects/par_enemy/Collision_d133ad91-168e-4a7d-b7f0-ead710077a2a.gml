@@ -1,6 +1,6 @@
 /// @description Collision with weapon
 
-if (_state != PLAYER_STATES.DEAD && !ds_map_exists(other._enemiesHit, id))
+if (_state != ENEMY_STATES.DEAD && !ds_map_exists(other._enemiesHit, id))
 {
     ds_map_add(other._enemiesHit, id, true);
     

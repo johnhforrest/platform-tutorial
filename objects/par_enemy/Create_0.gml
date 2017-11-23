@@ -8,5 +8,13 @@ _xScale = image_xscale;
 _yScale = image_yscale;
 _tempY = 0;
 
-_state = PLAYER_STATES.DEFAULT;
+_state = ENEMY_STATES.DEFAULT;
 _knockbackAmount = 8;
+
+enum ENEMY_STATES
+{
+    DEFAULT,    // 0
+    KNOCKBACK,  // 1
+    DEAD,       // 2
+	FROZEN      // 3
+};
