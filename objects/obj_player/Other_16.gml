@@ -6,5 +6,5 @@ if animation_hit_frame(image_number - 1) {
 }
 
 move_horizontally();
-move_vertically();
+move_vertically(0, true);
 set_sprite_scale();

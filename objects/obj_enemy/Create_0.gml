@@ -7,8 +7,8 @@ snap_to_vgrid(true);
 _walkSpeed = 2;
 _horizontalSpeed = _walkSpeed;
 
-// Life
-_hitPoints = 4;
-
-// Attack
+// Enemy state
 _attackPower = 1;
+_hitPoints = 4;
+_maxHitPoints = _hitPoints;
+_knockbackAmount = 8;

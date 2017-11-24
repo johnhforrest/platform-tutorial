@@ -1,5 +1,3 @@
-/// @description Collision with enemy
-
 if (_invincibilityFrames == 0 && other._state != ENEMY_STATES.DEAD)
 {
     with (other)

@@ -8,8 +8,12 @@ _xScale = image_xscale;
 _yScale = image_yscale;
 _tempY = 0;
 
+// Enemy state
+_attackPower = 0;
+_hitPoints = 0;
+_maxHitPoints = 0;
+_knockbackAmount = 0;
 _state = ENEMY_STATES.DEFAULT;
-_knockbackAmount = 8;
 
 enum ENEMY_STATES
 {

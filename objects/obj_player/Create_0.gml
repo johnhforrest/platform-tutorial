@@ -1,5 +1,3 @@
-/// @description Set up player object
-
 init_movement_object();
 snap_to_vgrid(true);
 
@@ -10,8 +8,6 @@ _tempY = 0;
 
 // Movement
 _maxHorizontalSpeed = 6;
-_acceleration = 1.3;
-_friction = 0.3;
 _directionFacing = DIRECTION.RIGHT;
 
 // Life
@@ -22,6 +18,7 @@ _invincibilityInterval = 8;
 
 // Attacking
 _attackPower = 2;
+_knockbackAmount = 16;
 _cooldown = 0;
 _cooldownReset = 7;
 

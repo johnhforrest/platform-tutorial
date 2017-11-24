@@ -25,7 +25,7 @@ if (obj_game._abilities[ABILITIES.DOUBLEJUMP] == 1 && key_jump)
 	obj_game._abilities[ABILITIES.DOUBLEJUMP] = 0;
 }
 
-if (set_is_on_ground())
+if (set_is_on_ground(true))
 {
     // We are on the ground, reset jump state
     if (obj_game._abilities[ABILITIES.DOUBLEJUMP] != -1)
@@ -53,7 +53,7 @@ if (_verticalSpeed < 0 && !obj_input._jumpHeld)
 }
 
 move_horizontally();
-move_vertically();
+move_vertically(0, true);
 set_sprite_scale();
 
 // Transition to dash state

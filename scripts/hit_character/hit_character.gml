@@ -8,10 +8,10 @@ var vKnockbackSpeed = argument3;
 with (object)
 {
     _hitPoints -= damage;
-    //_horizontalSpeed = hKnockbackSpeed;
-    //_verticalSpeed = vKnockbackSpeed;
-    //_timer = false;
+    _horizontalSpeed = hKnockbackSpeed;
+    _verticalSpeed = vKnockbackSpeed;
+    _timer = false;
     
     //alarm[0] = floor(game_get_speed(gamespeed_fps) / 3);
-    //_state = PLAYER_STATES.KNOCKBACK
+    _state = ENEMY_STATES.KNOCKBACK
 }
