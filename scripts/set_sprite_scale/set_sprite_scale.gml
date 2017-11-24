@@ -6,5 +6,5 @@ if (_horizontalSpeed != 0)
 }
 
 // Unsquashing the sprites if they were squashed from a jump or collision
-_xScale = lerp(_xScale, image_xscale, .1);
-_yScale = lerp(_yScale, image_yscale, .1);
+_xScale = approach(_xScale, image_xscale, .1);
+_yScale = approach(_yScale, image_yscale, .1);

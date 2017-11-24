@@ -1,5 +1,6 @@
 /// @description Move the object horizontally
 /// @arg collisionMultiplier A value that the horizontal speed gets multiplied by after a collision has occurred
+/// @arg preferGround A value that indicates whether or not the object prefers to stay on the current platform
 
 var collisionMultiplier = argument_count > 0 ? argument[0] : 0;
 var preferGround = argument_count > 1 ? argument[1] : false;

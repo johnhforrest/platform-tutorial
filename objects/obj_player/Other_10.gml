@@ -13,7 +13,7 @@ if (obj_input._horizontalSum != 0)
 }
 else
 {
-    _horizontalSpeed = lerp(_horizontalSpeed, 0, _friction);
+    _horizontalSpeed = approach(_horizontalSpeed, 0, _friction);
 }
    
 // Calculating vertical movement

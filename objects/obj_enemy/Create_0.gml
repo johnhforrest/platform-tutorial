@@ -9,6 +9,6 @@ _horizontalSpeed = _walkSpeed;
 
 // Enemy state
 _attackPower = 1;
-_hitPoints = 4;
+_hitPoints = 8;
 _maxHitPoints = _hitPoints;
 _knockbackAmount = 8;

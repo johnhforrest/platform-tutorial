@@ -18,7 +18,7 @@ _invincibilityInterval = 8;
 
 // Attacking
 _attackPower = 2;
-_knockbackAmount = 16;
+_knockbackAmount = 6;
 _cooldown = 0;
 _cooldownReset = 7;
 
