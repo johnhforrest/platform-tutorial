@@ -63,14 +63,16 @@ if (obj_game._abilities[ABILITIES.DASH] == 1 && obj_input._dashPressed)
     _horizontalSpeed = sign(image_xscale) * _walkSpeed * 3;
     _verticalSpeed = 0;
     obj_game._abilities[ABILITIES.DASH] = _dashLength;
-    _state = STATES.DASHING;
+    _state = PLAYER_STATES.DASHING;
 }
 
 // Creating dust effect when moving
+/*
 if ((abs(_horizontalSpeed) > 0 || abs(_verticalSpeed) > 0) && alarm[1] <= 0)
 {
     alarm[1] = 3;
 }
+*/
 
 // Calculate attack
 if (_cooldown == 0)
@@ -106,7 +108,7 @@ if (_cooldown == 0)
         audio_play_sound(sound_swipe, 1, false);
         image_speed = 0.8;
         _cooldown = _cooldownReset;
-        _state = STATES.ATTACK;
+        _state = PLAYER_STATES.ATTACK;
     }
 }
 else

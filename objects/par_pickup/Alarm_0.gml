@@ -2,7 +2,7 @@
 
 with (obj_player)
 {
-    _state = STATES.DEFAULT;
+    _state = PLAYER_STATES.DEFAULT;
 }
 
 instance_destroy();

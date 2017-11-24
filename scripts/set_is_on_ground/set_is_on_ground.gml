@@ -4,7 +4,10 @@
 if (tile_vcollision(_tileMap, 1))
 {
     snap_to_vgrid(true);
-    animate_vertical_collision();
+	
+	if (self.id == obj_player.id) {
+		animate_vertical_collision();
+	}
 
     _verticalSpeed = 0;
     _timer = false;

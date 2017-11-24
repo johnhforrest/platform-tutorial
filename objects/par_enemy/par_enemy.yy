@@ -5,22 +5,12 @@
     "name": "par_enemy",
     "eventList": [
         {
-            "id": "8d7bbb24-9075-4c86-a218-5ee273a90704",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 1,
-            "eventtype": 3,
-            "m_owner": "51ad49c7-47a7-46f9-b496-dba20e0ddeb8"
-        },
-        {
             "id": "070df468-66cc-4633-b13f-d466c6712193",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 14,
+            "enumb": 12,
             "eventtype": 7,
             "m_owner": "51ad49c7-47a7-46f9-b496-dba20e0ddeb8"
         },
@@ -63,10 +53,30 @@
             "enumb": 11,
             "eventtype": 7,
             "m_owner": "51ad49c7-47a7-46f9-b496-dba20e0ddeb8"
+        },
+        {
+            "id": "94636305-a069-430a-9141-5cc6518ebbe1",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 3,
+            "m_owner": "51ad49c7-47a7-46f9-b496-dba20e0ddeb8"
+        },
+        {
+            "id": "7b381951-7dbe-4db5-8e9d-8ecb0eb4fadc",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 8,
+            "m_owner": "51ad49c7-47a7-46f9-b496-dba20e0ddeb8"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
-    "parentObjectId": "357fb4c7-5bfc-4c3e-8e19-d46617b2bc2c",
+    "parentObjectId": "00000000-0000-0000-0000-000000000000",
     "persistent": false,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,

@@ -1,4 +1,4 @@
-/// @description Detecting life
+/// @description Running event state
 
 // Calculating life
 if (_hitPoints <= 0)
@@ -13,3 +13,5 @@ if (_invincibilityFrames > 0)
 }
 
 sprite_index = _sprite[_state, _directionFacing];
+
+event_user(_state);

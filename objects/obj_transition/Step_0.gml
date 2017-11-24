@@ -2,6 +2,7 @@
 
 if (_mode != TRANSITION_MODE.OFF)
 {
+    /*
 	if (_mode == TRANSITION_MODE.INTRO)
 	{
 		_percent = max(0, _percent - max((_percent / 10), 0.005));
@@ -10,9 +11,10 @@ if (_mode != TRANSITION_MODE.OFF)
 	{
 		_percent = min(_targetPercent, _percent + max(((_targetPercent - _percent) / 10), 0.005));
 	}
+    */
 	
-	if (_percent == _targetPercent || _percent == 0)
-	{
+	//if (_percent == _targetPercent || _percent == 0)
+	//{
 		switch (_mode)
 		{
 			case TRANSITION_MODE.NEXT:
@@ -48,5 +50,5 @@ if (_mode != TRANSITION_MODE.OFF)
                 _mode = TRANSITION_MODE.OFF;
                 break;
 		}
-	}
+	//}
 }

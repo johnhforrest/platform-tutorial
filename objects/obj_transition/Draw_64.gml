@@ -1,5 +1,6 @@
 /// @description Insert description here
 
+/*
 if (_mode != TRANSITION_MODE.OFF)
 {
     draw_set_color(c_black);
@@ -10,3 +11,4 @@ if (_mode != TRANSITION_MODE.OFF)
     // drawing the bottom rectangle
     draw_rectangle(0, _guiHeight, _guiWidth, _guiHeight - (_percent * _guiHeightHalf), false);
 }
+*/
