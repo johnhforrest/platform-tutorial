@@ -623,6 +623,14 @@
             }
         },
         {
+            "Key": "95771e62-4a6e-4ed3-8763-a0cbf7338903",
+            "Value": {
+                "id": "e07b268c-49ee-46f1-a7a3-7ca27d39cecd",
+                "resourcePath": "scripts\\create_hitbox\\create_hitbox.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "9626aa74-7b66-49cd-94d7-0c065097a38c",
             "Value": {
                 "id": "bbd93745-10eb-452d-a834-6dcc777c8d73",
@@ -783,6 +791,14 @@
             }
         },
         {
+            "Key": "d269205d-2598-49e2-a94d-cf568d30e8d1",
+            "Value": {
+                "id": "1ca26ac0-88a3-4bfd-8ffd-682c2ca54e6d",
+                "resourcePath": "objects\\obj_hitbox\\obj_hitbox.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "d421c64e-eb56-4796-a6bf-bfe93f595d3a",
             "Value": {
                 "id": "8ab21098-5dc4-4830-8e8a-b7831d6c6e8a",
@@ -820,14 +836,6 @@
                 "id": "d2fe9a8a-8e92-441d-8016-93f2ab4b0dc1",
                 "resourcePath": "sprites\/spr_enemy_dead\/spr_enemy_dead.yy",
                 "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "df8200ff-fbae-4d80-863e-d46ef8cb398e",
-            "Value": {
-                "id": "da4c8351-e551-4035-9c5f-38fdf2a211af",
-                "resourcePath": "objects\/obj_attack\/obj_attack.yy",
-                "resourceType": "GMObject"
             }
         },
         {
@@ -961,6 +969,7 @@
         "a7247f57-c028-49d8-8f95-ba6a694dbd11",
         "60e1a830-f8db-475b-8941-e680f2c4736d",
         "c366694d-7857-4626-9317-e0e6693631df",
+        "95771e62-4a6e-4ed3-8763-a0cbf7338903",
         "5f099fb3-6d38-4333-a38d-720489be0ffe",
         "4d533f6f-95dc-453f-9ced-c764c1ad8e7b",
         "57edc398-b1f9-405b-8e2b-e9a425ff1ce4",

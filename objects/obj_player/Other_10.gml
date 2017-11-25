@@ -2,6 +2,10 @@
 
 if (obj_input._horizontalSum != 0 || obj_input._verticalSum != 0) {
     _directionFacing = round(point_direction(0, 0, obj_input._horizontalSum, -obj_input._verticalSum) / 90) % 4;
+} else if (obj_input._verticalSum == 0 && _directionFacing == 1) {
+    _directionFacing = _directionFacing - sign(image_xscale);
+} else if (obj_input._verticalSum == 0 && _directionFacing == 3) {
+    _directionFacing = (_directionFacing + sign(image_xscale)) % 4;
 }
 
 // Calculating horizontal movement
@@ -68,24 +72,7 @@ if (_cooldown == 0) {
     if (obj_input._attackPressed) {
         global.debug_num_attacks++;
         //show_debug_message("num attacks: " + string(global.debug_num_attacks));
-        
-        // TODO: clean this up with a hitbox object
-        with (instance_create_layer(x, y, "Player", obj_attack)) {
-            var offset = TILE_SIZE * 1.5;
-            if (obj_input._verticalSum > 0) {
-                y -= offset;
-                image_angle = 90;
-                _direction = 90;
-            } else if (obj_input._verticalSum < 0) {
-                y += offset;
-                image_angle = 270;
-                _direction = 270;
-            } else {
-                 x += (offset * other.image_xscale)
-                _direction = point_direction(other.x, other.y, x, y);
-            }
-        }
-        
+
         audio_sound_pitch(sound_swipe, random_range(0.8, 1.2));
         audio_play_sound(sound_swipe, 1, false);
         image_speed = 0.8;

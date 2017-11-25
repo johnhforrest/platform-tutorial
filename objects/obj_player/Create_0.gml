@@ -18,7 +18,7 @@ _invincibilityInterval = 8;
 
 // Attacking
 _attackPower = 2;
-_knockbackAmount = 6;
+_knockbackAmount = 8;
 _knockbackDuration = game_get_speed(gamespeed_fps) / 4;
 _cooldown = 0;
 _cooldownReset = 7;
