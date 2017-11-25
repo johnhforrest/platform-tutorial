@@ -319,6 +319,14 @@
             }
         },
         {
+            "Key": "3e3816bf-293a-4ce0-9778-49ebf63adac8",
+            "Value": {
+                "id": "4543bf88-514d-4001-a149-b18d3c3173ab",
+                "resourcePath": "scripts\\reset_movement_abilities\\reset_movement_abilities.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "44c8c2ce-1f1c-440e-befe-924fc8126189",
             "Value": {
                 "id": "af5389cd-919a-49b6-b2cb-71fd36bacb65",
@@ -973,6 +981,7 @@
         "fdc7abe6-01f9-448b-93da-9e9551600b79",
         "0f6d9db3-4fc0-4703-a478-813ae0bf688c",
         "85196630-cb08-495d-a215-afb4856b7add",
+        "3e3816bf-293a-4ce0-9778-49ebf63adac8",
         "9b034927-ab78-43e6-ae72-5735dee0a354",
         "ccfb5dbf-4561-41a8-b5e2-4b29e6d3677d",
         "4f6af9bd-b58a-46a2-823c-dcaa53ad146c",

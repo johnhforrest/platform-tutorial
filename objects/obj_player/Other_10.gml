@@ -10,7 +10,8 @@ if (obj_input._horizontalSum != 0 || obj_input._verticalSum != 0) {
 
 // Calculating horizontal movement
 if (obj_input._horizontalSum != 0) {
-    _horizontalSpeed = obj_input._horizontalSum * _walkSpeed * _acceleration;
+    var targetSpeed_ = obj_input._horizontalSum * _walkSpeed;
+    _horizontalSpeed = approach(_horizontalSpeed, targetSpeed_, _acceleration);
     _horizontalSpeed = clamp(_horizontalSpeed, -_maxHorizontalSpeed, _maxHorizontalSpeed);
 } else {
     _horizontalSpeed = approach(_horizontalSpeed, 0, _friction);
@@ -25,19 +26,24 @@ if (obj_game._abilities[ABILITIES.DOUBLEJUMP] == 1 && key_jump) {
 }
 
 if (set_is_on_ground(true)) {
-    // We are on the ground, reset jump state
-    if (obj_game._abilities[ABILITIES.DOUBLEJUMP] != -1) {
-    	obj_game._abilities[ABILITIES.DOUBLEJUMP] = 1;
-    }
-    
-    // We are on the ground, reset dash state
-    if (obj_game._abilities[ABILITIES.DASH] != -1) {
-        obj_game._abilities[ABILITIES.DASH] = 1;
-    }
+    reset_movement_abilities();
     
     if (key_jump) {
         jump();
     }
+} else if (tile_hcollision(_tileMap, _horizontalSpeed)) {
+    reset_movement_abilities();
+    
+    _selfGravity = 0;
+    _verticalSpeed = 3;
+    
+    if (key_jump) {
+        var angle_ = _directionFacing == 0 ? 135 : 45;
+        _horizontalSpeed = lengthdir_x(-_jumpHeight, angle_);
+        _verticalSpeed = lengthdir_y(-_jumpHeight, angle_);
+    }
+} else {
+    _selfGravity = 0.5;
 }
 
 // Stop increasing jump height if button is let go
