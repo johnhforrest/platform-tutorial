@@ -57,8 +57,7 @@ move_vertically(0, true);
 set_sprite_scale();
 
 // Transition to dash state
-if (obj_game._abilities[ABILITIES.DASH] == 1 && obj_input._dashPressed)
-{
+if (obj_game._abilities[ABILITIES.DASH] == 1 && obj_input._dashPressed) {
     _xScale = image_xscale;
     _horizontalSpeed = sign(image_xscale) * _walkSpeed * 3;
     _verticalSpeed = 0;

@@ -6,7 +6,6 @@ snap_to_vgrid(true);
 // Sprite state
 _xScale = image_xscale;
 _yScale = image_yscale;
-_tempY = 0;
 
 // Enemy state
 _attackPower = 0;

@@ -4,7 +4,7 @@ snap_to_vgrid(true);
 // Sprite state
 _xScale = image_xscale;
 _yScale = image_yscale;
-_tempY = 0;
+_prevY = 0;
 
 // Movement
 _maxHorizontalSpeed = 6;
@@ -32,8 +32,7 @@ _doubleJumpAvailable = false;
 // Player state
 _state = PLAYER_STATES.DEFAULT;
 
-enum PLAYER_STATES
-{
+enum PLAYER_STATES {
     DEFAULT,    // 0
     KNOCKBACK,  // 1
     DASHING,    // 2
@@ -41,13 +40,18 @@ enum PLAYER_STATES
     DEAD,       // 4
     SLAM,       // 5
     ATTACK      // 6
-}
+};
 
 // Sprite lookup table
 _sprite[PLAYER_STATES.DEFAULT, DIRECTION.RIGHT] = spr_player_right;
 _sprite[PLAYER_STATES.DEFAULT, DIRECTION.UP] = spr_player_right;
 _sprite[PLAYER_STATES.DEFAULT, DIRECTION.LEFT] = spr_player_right;
 _sprite[PLAYER_STATES.DEFAULT, DIRECTION.DOWN] = spr_player_right;
+
+_sprite[PLAYER_STATES.KNOCKBACK, DIRECTION.RIGHT] = spr_player_right;
+_sprite[PLAYER_STATES.KNOCKBACK, DIRECTION.UP] = spr_player_right;
+_sprite[PLAYER_STATES.KNOCKBACK, DIRECTION.LEFT] = spr_player_right;
+_sprite[PLAYER_STATES.KNOCKBACK, DIRECTION.DOWN] = spr_player_right;
 
 _sprite[PLAYER_STATES.DASHING, DIRECTION.RIGHT] = spr_player_right;
 _sprite[PLAYER_STATES.DASHING, DIRECTION.UP] = spr_player_right;
