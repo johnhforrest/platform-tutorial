@@ -10,8 +10,7 @@ _horizontalSpeed = _walkSpeed;
 _aggroRadius = 400;
 
 // Life
-_hitPoints = 800;
-
-// Attack
 _attackPower = 0;
+_hitPoints = 800;
+_maxHitPoints = _hitPoints;
 _knockbackAmount = 16;

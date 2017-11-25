@@ -1,8 +1,14 @@
 /// @description Knockback state
 
-// Returning to default state
-_horizontalSpeed = lerp(_horizontalSpeed, 0, .1);
-_verticalSpeed = lerp(_verticalSpeed, 0, .1);
-
 move_horizontally();
-move_vertically();
+move_vertically(0, true);
+
+// Returning to default state
+_horizontalSpeed = approach(_horizontalSpeed, 0, _friction);
+_verticalSpeed = approach(_verticalSpeed, 0, _friction);
+
+if (alarm[0] <= 0) {
+    _horizontalSpeed = 0;
+    _verticalSpeed = 0;
+    _state = PLAYER_STATES.DEFAULT;
+}

@@ -1,5 +1,6 @@
 /// @description Default state
 
+/*
 if (set_is_on_ground())
 {
     _verticalSpeed = _bounceHeight;
@@ -34,3 +35,4 @@ if (point_distance(x, y, obj_player.x, obj_player.y) > _aggroRadius)
 
 move_horizontally();
 move_vertically();
+*/
