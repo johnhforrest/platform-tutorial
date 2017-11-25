@@ -1,54 +1,44 @@
 /// @description Default state
 
-if (obj_input._horizontalSum != 0 || obj_input._verticalSum != 0)
-{
+if (obj_input._horizontalSum != 0 || obj_input._verticalSum != 0) {
     _directionFacing = round(point_direction(0, 0, obj_input._horizontalSum, -obj_input._verticalSum) / 90) % 4;
 }
 
 // Calculating horizontal movement
-if (obj_input._horizontalSum != 0)
-{
+if (obj_input._horizontalSum != 0) {
     _horizontalSpeed = obj_input._horizontalSum * _walkSpeed * _acceleration;
     _horizontalSpeed = clamp(_horizontalSpeed, -_maxHorizontalSpeed, _maxHorizontalSpeed);
-}
-else
-{
+} else {
     _horizontalSpeed = approach(_horizontalSpeed, 0, _friction);
 }
    
 // Calculating vertical movement
 var key_jump = obj_input._jumpPressed;
 
-if (obj_game._abilities[ABILITIES.DOUBLEJUMP] == 1 && key_jump)
-{
+if (obj_game._abilities[ABILITIES.DOUBLEJUMP] == 1 && key_jump) {
 	jump();
 	obj_game._abilities[ABILITIES.DOUBLEJUMP] = 0;
 }
 
-if (set_is_on_ground(true))
-{
+if (set_is_on_ground(true)) {
     // We are on the ground, reset jump state
-    if (obj_game._abilities[ABILITIES.DOUBLEJUMP] != -1)
-    {
+    if (obj_game._abilities[ABILITIES.DOUBLEJUMP] != -1) {
     	obj_game._abilities[ABILITIES.DOUBLEJUMP] = 1;
     }
     
     // We are on the ground, reset dash state
-    if (obj_game._abilities[ABILITIES.DASH] != -1)
-    {
+    if (obj_game._abilities[ABILITIES.DASH] != -1) {
         obj_game._abilities[ABILITIES.DASH] = 1;
     }
     
-    if (key_jump)
-    {
+    if (key_jump) {
         jump();
     }
 }
 
 // Stop increasing jump height if button is let go
 // This allows for precise platforming
-if (_verticalSpeed < 0 && !obj_input._jumpHeld)
-{
+if (_verticalSpeed < 0 && !obj_input._jumpHeld) {
     _verticalSpeed = max(_verticalSpeed, _jumpHeight / 4);
 }
 
@@ -74,30 +64,23 @@ if ((abs(_horizontalSpeed) > 0 || abs(_verticalSpeed) > 0) && alarm[1] <= 0)
 */
 
 // Calculate attack
-if (_cooldown == 0)
-{
-    if (obj_input._attackPressed)
-    {
+if (_cooldown == 0) {
+    if (obj_input._attackPressed) {
         global.debug_num_attacks++;
         //show_debug_message("num attacks: " + string(global.debug_num_attacks));
         
-        with (instance_create_layer(x, y, "Player", obj_attack))
-        {
+        // TODO: clean this up with a hitbox object
+        with (instance_create_layer(x, y, "Player", obj_attack)) {
             var offset = TILE_SIZE * 1.5;
-            if (obj_input._verticalSum > 0)
-            {
+            if (obj_input._verticalSum > 0) {
                 y -= offset;
                 image_angle = 90;
                 _direction = 90;
-            }
-            else if (obj_input._verticalSum < 0)
-            {
+            } else if (obj_input._verticalSum < 0) {
                 y += offset;
                 image_angle = 270;
                 _direction = 270;
-            }
-            else
-            {
+            } else {
                  x += (offset * other.image_xscale)
                 _direction = point_direction(other.x, other.y, x, y);
             }
@@ -107,10 +90,10 @@ if (_cooldown == 0)
         audio_play_sound(sound_swipe, 1, false);
         image_speed = 0.8;
         _cooldown = _cooldownReset;
+        _xScale = image_xscale;
+        _yScale = image_yscale;
         _state = PLAYER_STATES.ATTACK;
     }
-}
-else
-{
+} else {
     _cooldown--;
 }
