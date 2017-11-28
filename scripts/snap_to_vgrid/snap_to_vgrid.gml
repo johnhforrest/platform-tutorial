@@ -5,11 +5,11 @@ var snapDown = argument0;
 
 if (snapDown)
 {
-    y = bbox_bottom - (bbox_bottom % TILE_SIZE) + (TILE_SIZE - 1);
-    y -= bbox_bottom - y;
+    y = bbox_bottom & ~(TILE_SIZE - 1);
+    y -= bbox_bottom - y + 1;
 }
 else
 {
-    y = bbox_top - (bbox_top % TILE_SIZE);
-    y -= bbox_top - y;
+    y = bbox_top & ~(TILE_SIZE - 1);
+    y += TILE_SIZE + y - bbox_top;
 }

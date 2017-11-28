@@ -6,7 +6,7 @@ if (obj_game._targetMarker == _markerIndex && instance_exists(obj_player))
     {
         x = other.x;
         y = other.y;
-        snap_to_vgrid(true);
+        snap_to_vgrid(false);
     }
 }
 

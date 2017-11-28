@@ -5,11 +5,11 @@ var snapRight = argument0;
 
 if (snapRight)
 {
-    x = x - (x % TILE_SIZE) + (TILE_SIZE - 1);
-    x -= bbox_right - x;
+    x = bbox_right & ~(TILE_SIZE - 1);
+    x -= bbox_right - x + 1;
 }
 else
 {
-    x = x - (x % TILE_SIZE);
-    x -= bbox_left - x;
+    x = bbox_left & ~(TILE_SIZE - 1);
+    x += TILE_SIZE + x - bbox_left;
 }
