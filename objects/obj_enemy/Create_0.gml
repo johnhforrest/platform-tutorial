@@ -1,7 +1,6 @@
 /// @description Setting up the enemy object
 
 event_inherited();
-snap_to_vgrid(true);
 
 // Movement
 _walkSpeed = 2;
