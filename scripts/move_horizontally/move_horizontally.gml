@@ -25,7 +25,7 @@ else if (preferGround)
     if (_horizontalSpeed > 0
         && (tilemap_get_at_pixel(_tileMap, bbox_right + TILE_SIZE, bbox_bottom + 1) == 0)
         && ((tilemap_get_at_pixel(_tileMap, bbox_left - TILE_SIZE, bbox_bottom + 1) == 0)
-            || tile_hcollision(_tileMap, -TILE_SIZE)))
+            || tilemap_get_at_pixel(_tileMap, bbox_left - TILE_SIZE - 1, bbox_bottom) != 0 || tilemap_get_at_pixel(_tileMap, bbox_left - TILE_SIZE - 1, bbox_top) != 0))
     {
         // Moving to the right AND there's no ground tile in front
         // AND there's no ground tile behind or there's a wall tile behind
@@ -34,7 +34,7 @@ else if (preferGround)
     else if (_horizontalSpeed < 0
         && (tilemap_get_at_pixel(_tileMap, bbox_left - TILE_SIZE, bbox_bottom + 1) == 0)
         && ((tilemap_get_at_pixel(_tileMap, bbox_right + TILE_SIZE, bbox_bottom + 1) == 0)
-            || tile_hcollision(_tileMap, TILE_SIZE)))
+            || tilemap_get_at_pixel(_tileMap, bbox_right + TILE_SIZE + 1, bbox_bottom) != 0 || tilemap_get_at_pixel(_tileMap, bbox_right + TILE_SIZE + 1, bbox_top) != 0))
     {
         // Moving to the left AND there's no ground tile in front
         // AND there's no ground tile behind or there's a wall tile behind
