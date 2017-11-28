@@ -33,9 +33,11 @@ if (set_is_on_ground(true)) {
     }
 } else if (tile_hcollision(_tileMap, _horizontalSpeed)) {
     reset_movement_abilities();
-    
-    _selfGravity = 0;
-    _verticalSpeed = 3;
+
+    if (_verticalSpeed >= 0) {
+        _verticalSpeed = 3;
+        _selfGravity = 0;
+    }
     
     if (key_jump) {
         var angle_ = _directionFacing == 0 ? 135 : 45;
@@ -51,6 +53,9 @@ if (set_is_on_ground(true)) {
 if (_verticalSpeed < 0 && !obj_input._jumpHeld) {
     _verticalSpeed = max(_verticalSpeed, _jumpHeight / 4);
 }
+
+_horizontalSpeed = round(_horizontalSpeed);
+_verticalSpeed = round(_verticalSpeed);
 
 move_horizontally();
 move_vertically(0, true);

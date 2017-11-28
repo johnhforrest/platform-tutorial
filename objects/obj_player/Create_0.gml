@@ -7,7 +7,7 @@ _yScale = image_yscale;
 _prevY = 0;
 
 // Movement
-_maxHorizontalSpeed = 6;
+_maxHorizontalSpeed = 20;
 _directionFacing = DIRECTION.RIGHT;
 
 // Life
