@@ -16,10 +16,11 @@ else
     _timer = true;
 }
 
-if (tile_vcollision(_tileMap, _verticalSpeed))
-{
-    // if we have a collision, snap to the tile grid (i.e., close the remaining distance to the wall but not over)
-    snap_to_vgrid(_verticalSpeed > 0);
+y += _verticalSpeed;
+
+if (_verticalSpeed > 0
+    && (tilemap_get_at_pixel(_tileMap, bbox_left, bbox_bottom) != 0 || tilemap_get_at_pixel(_tileMap, bbox_right, bbox_bottom) != 0)) {
+    snap_to_vgrid(true);
     
 	if (canSlam) {
 		animate_vertical_collision();
@@ -27,6 +28,10 @@ if (tile_vcollision(_tileMap, _verticalSpeed))
 	
     _verticalSpeed *= collisionMultiplier;
     _timer = false;
+} 
+else if (tilemap_get_at_pixel(_tileMap, bbox_left, bbox_top) != 0 || tilemap_get_at_pixel(_tileMap, bbox_right, bbox_top) != 0) {
+    snap_to_vgrid(false);
+    	
+    _verticalSpeed *= collisionMultiplier;
+    _timer = false;
 }
-
-y += round(_verticalSpeed);

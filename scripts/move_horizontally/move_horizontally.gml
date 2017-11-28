@@ -5,11 +5,18 @@
 var collisionMultiplier = argument_count > 0 ? argument[0] : 0;
 var preferGround = argument_count > 1 ? argument[1] : false;
 
+x += _horizontalSpeed;
+
 // Horizontal movement
-if (tile_hcollision(_tileMap, _horizontalSpeed))
-{
-	snap_to_hgrid(_horizontalSpeed > 0);
-	
+if (_horizontalSpeed > 0
+    && (tilemap_get_at_pixel(_tileMap, bbox_right, bbox_top) != 0 || tilemap_get_at_pixel(_tileMap, bbox_right, bbox_bottom) != 0)) {
+	snap_to_hgrid(true);
+    
+	_horizontalSpeed *= collisionMultiplier;
+} else if (_horizontalSpeed < 0
+    && (tilemap_get_at_pixel(_tileMap, bbox_left, bbox_top) != 0 || tilemap_get_at_pixel(_tileMap, bbox_left, bbox_bottom) != 0)) {
+    snap_to_hgrid(false);
+    
 	_horizontalSpeed *= collisionMultiplier;
 }
 else if (preferGround)
@@ -40,5 +47,3 @@ else if (preferGround)
         _horizontalSpeed = -_horizontalSpeed;
     }
 }
-
-x += round(_horizontalSpeed);

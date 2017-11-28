@@ -3,10 +3,8 @@
 
 var canSlam = argument_count > 0 ? argument[0] : false;
 
-if (tile_vcollision(_tileMap, 1))
+if (tilemap_get_at_pixel(_tileMap, bbox_left, bbox_bottom + 1) != 0 || tilemap_get_at_pixel(_tileMap, bbox_right, bbox_bottom + 1) != 0)
 {
-    snap_to_vgrid(true);
-	
 	if (canSlam) {
 		animate_vertical_collision();
 	}

@@ -1,7 +1,7 @@
 /// @description Setting up the enemy parent
 
 init_movement_object();
-snap_to_vgrid(true);
+snap_to_vgrid(false);
 
 // Sprite state
 _xScale = image_xscale;
