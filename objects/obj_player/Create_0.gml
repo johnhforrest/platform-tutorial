@@ -7,8 +7,12 @@ _yScale = image_yscale;
 _prevY = 0;
 
 // Movement
-_maxHorizontalSpeed = 6;
 _directionFacing = DIRECTION.RIGHT;
+_maxHorizontalSpeed = 16;
+_dashLength = 15;
+_jumpHeight = -14;
+_doubleJumpAvailable = false;
+_wallSliding = false;
 
 // Life
 _maxHitPoints = 3;
@@ -23,13 +27,6 @@ _knockbackDuration = game_get_speed(gamespeed_fps) / 4;
 _cooldown = 0;
 _cooldownReset = 7;
 
-// Dashing
-_dashLength = 15;
-
-// Jumping
-_jumpHeight = -12;
-_doubleJumpAvailable = false;
-
 // Player state
 _state = PLAYER_STATES.DEFAULT;
 
@@ -40,7 +37,8 @@ enum PLAYER_STATES {
     FROZEN,     // 3
     DEAD,       // 4
     SLAM,       // 5
-    ATTACK      // 6
+    ATTACK,     // 6
+    WALL_SLIDE  // 7
 };
 
 // Sprite lookup table
@@ -73,3 +71,8 @@ _sprite[PLAYER_STATES.ATTACK, DIRECTION.RIGHT] = spr_player_attack_right;
 _sprite[PLAYER_STATES.ATTACK, DIRECTION.UP] = spr_player_attack_up;
 _sprite[PLAYER_STATES.ATTACK, DIRECTION.LEFT] = spr_player_attack_right;
 _sprite[PLAYER_STATES.ATTACK, DIRECTION.DOWN] = spr_player_attack_down;
+
+_sprite[PLAYER_STATES.WALL_SLIDE, DIRECTION.RIGHT] = spr_player_right;
+_sprite[PLAYER_STATES.WALL_SLIDE, DIRECTION.UP] = spr_player_right;
+_sprite[PLAYER_STATES.WALL_SLIDE, DIRECTION.LEFT] = spr_player_right;
+_sprite[PLAYER_STATES.WALL_SLIDE, DIRECTION.DOWN] = spr_player_right;

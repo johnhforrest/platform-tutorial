@@ -751,6 +751,14 @@
             }
         },
         {
+            "Key": "b498ae5a-32ee-4cf9-bc2e-4e3bb5a07cbf",
+            "Value": {
+                "id": "310960e9-41d2-43c0-a733-563722a04c1b",
+                "resourcePath": "scripts\\wall_jump\\wall_jump.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "b9e6336e-ecf8-4c60-b6eb-00b8c14ecedd",
             "Value": {
                 "id": "2655ad17-081a-4f0d-ac45-523d8839a88f",
@@ -973,6 +981,7 @@
         "fdc7abe6-01f9-448b-93da-9e9551600b79",
         "0f6d9db3-4fc0-4703-a478-813ae0bf688c",
         "85196630-cb08-495d-a215-afb4856b7add",
+        "b498ae5a-32ee-4cf9-bc2e-4e3bb5a07cbf",
         "3e3816bf-293a-4ce0-9778-49ebf63adac8",
         "9b034927-ab78-43e6-ae72-5735dee0a354",
         "ccfb5dbf-4561-41a8-b5e2-4b29e6d3677d",

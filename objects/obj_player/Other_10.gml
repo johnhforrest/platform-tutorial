@@ -25,59 +25,58 @@ if (obj_game._abilities[ABILITIES.DOUBLEJUMP] == 1 && key_jump) {
 	obj_game._abilities[ABILITIES.DOUBLEJUMP] = 0;
 }
 
-if (set_is_on_ground(true)) {
+var is_on_ground = set_is_on_ground(true);
+if (is_on_ground) {
+    _wallSliding = false;
     reset_movement_abilities();
     
     if (key_jump) {
         jump();
     }
-} else if (_horizontalSpeed > 0
-    && (tilemap_get_at_pixel(_tileMap, bbox_right, bbox_top) != 0 || tilemap_get_at_pixel(_tileMap, bbox_right, bbox_bottom) != 0)) {
-	snap_to_hgrid(true);
-    
+} else if (_wallSliding) {
+    _verticalSpeed = 3;
+    _timer = false;
     reset_movement_abilities();
     
-	_horizontalSpeed = 0;
-    
-    if (_verticalSpeed >= 0) {
-        _verticalSpeed = 3;
-        _selfGravity = 0;
-    }
-    
     if (key_jump) {
-        var angle_ = _directionFacing == 0 ? 135 : 45;
-        _horizontalSpeed = lengthdir_x(-_jumpHeight, angle_);
-        _verticalSpeed = lengthdir_y(-_jumpHeight, angle_);
+        wall_jump();
     }
-} else if (_horizontalSpeed < 0
-    && (tilemap_get_at_pixel(_tileMap, bbox_left, bbox_top) != 0 || tilemap_get_at_pixel(_tileMap, bbox_left, bbox_bottom) != 0)) {
-    snap_to_hgrid(false);
-    
-	reset_movement_abilities();
-    
-	_horizontalSpeed = 0;
-    
-    if (_verticalSpeed >= 0) {
-        _verticalSpeed = 3;
-        _selfGravity = 0;
-    }
-    
-    if (key_jump) {
-        var angle_ = _directionFacing == 0 ? 135 : 45;
-        _horizontalSpeed = lengthdir_x(-_jumpHeight, angle_);
-        _verticalSpeed = lengthdir_y(-_jumpHeight, angle_);
-    }
-} else {
-    _selfGravity = 0.5;
 }
 
 // Stop increasing jump height if button is let go
 // This allows for precise platforming
 if (_verticalSpeed < 0 && !obj_input._jumpHeld) {
-    _verticalSpeed = max(_verticalSpeed, _jumpHeight / 4);
+    _verticalSpeed = max(_verticalSpeed, 0);
 }
 
-move_horizontally();
+// Move horizontally
+x += _horizontalSpeed;
+if (_horizontalSpeed > 0) {
+    if (tilemap_get_at_pixel(_tileMap, bbox_right, bbox_top) != 0 || tilemap_get_at_pixel(_tileMap, bbox_right, bbox_bottom) != 0) {
+        snap_to_hgrid(true);
+    
+        _horizontalSpeed = 0;
+        
+        if (!is_on_ground && _verticalSpeed >= 0) {
+            _wallSliding = true;
+        }
+    } else {
+        _wallSliding = false;
+    }
+} else if (_horizontalSpeed < 0) {
+    if (tilemap_get_at_pixel(_tileMap, bbox_left, bbox_top) != 0 || tilemap_get_at_pixel(_tileMap, bbox_left, bbox_bottom) != 0) {
+        snap_to_hgrid(false);
+    
+        _horizontalSpeed = 0;
+        
+        if (!is_on_ground && _verticalSpeed >= 0) {
+            _wallSliding = true;
+        }
+    } else {
+        _wallSliding = false;
+    }
+}
+
 move_vertically(0, true);
 set_sprite_scale();
 
