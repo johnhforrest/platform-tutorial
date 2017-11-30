@@ -31,9 +31,32 @@ if (set_is_on_ground(true)) {
     if (key_jump) {
         jump();
     }
-} else if (tile_hcollision(_tileMap, _horizontalSpeed)) {
+} else if (_horizontalSpeed > 0
+    && (tilemap_get_at_pixel(_tileMap, bbox_right, bbox_top) != 0 || tilemap_get_at_pixel(_tileMap, bbox_right, bbox_bottom) != 0)) {
+	snap_to_hgrid(true);
+    
     reset_movement_abilities();
-
+    
+	_horizontalSpeed = 0;
+    
+    if (_verticalSpeed >= 0) {
+        _verticalSpeed = 3;
+        _selfGravity = 0;
+    }
+    
+    if (key_jump) {
+        var angle_ = _directionFacing == 0 ? 135 : 45;
+        _horizontalSpeed = lengthdir_x(-_jumpHeight, angle_);
+        _verticalSpeed = lengthdir_y(-_jumpHeight, angle_);
+    }
+} else if (_horizontalSpeed < 0
+    && (tilemap_get_at_pixel(_tileMap, bbox_left, bbox_top) != 0 || tilemap_get_at_pixel(_tileMap, bbox_left, bbox_bottom) != 0)) {
+    snap_to_hgrid(false);
+    
+	reset_movement_abilities();
+    
+	_horizontalSpeed = 0;
+    
     if (_verticalSpeed >= 0) {
         _verticalSpeed = 3;
         _selfGravity = 0;
@@ -53,9 +76,6 @@ if (set_is_on_ground(true)) {
 if (_verticalSpeed < 0 && !obj_input._jumpHeld) {
     _verticalSpeed = max(_verticalSpeed, _jumpHeight / 4);
 }
-
-_horizontalSpeed = round(_horizontalSpeed);
-_verticalSpeed = round(_verticalSpeed);
 
 move_horizontally();
 move_vertically(0, true);
