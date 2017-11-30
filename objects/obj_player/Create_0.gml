@@ -12,6 +12,7 @@ _maxHorizontalSpeed = 16;
 _dashLength = 15;
 _jumpHeight = -14;
 _doubleJumpAvailable = false;
+_wallSlideSpeed = 5;
 _wallSliding = false;
 
 // Life
@@ -37,8 +38,7 @@ enum PLAYER_STATES {
     FROZEN,     // 3
     DEAD,       // 4
     SLAM,       // 5
-    ATTACK,     // 6
-    WALL_SLIDE  // 7
+    ATTACK     // 6
 };
 
 // Sprite lookup table
@@ -71,8 +71,3 @@ _sprite[PLAYER_STATES.ATTACK, DIRECTION.RIGHT] = spr_player_attack_right;
 _sprite[PLAYER_STATES.ATTACK, DIRECTION.UP] = spr_player_attack_up;
 _sprite[PLAYER_STATES.ATTACK, DIRECTION.LEFT] = spr_player_attack_right;
 _sprite[PLAYER_STATES.ATTACK, DIRECTION.DOWN] = spr_player_attack_down;
-
-_sprite[PLAYER_STATES.WALL_SLIDE, DIRECTION.RIGHT] = spr_player_right;
-_sprite[PLAYER_STATES.WALL_SLIDE, DIRECTION.UP] = spr_player_right;
-_sprite[PLAYER_STATES.WALL_SLIDE, DIRECTION.LEFT] = spr_player_right;
-_sprite[PLAYER_STATES.WALL_SLIDE, DIRECTION.DOWN] = spr_player_right;

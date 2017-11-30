@@ -33,13 +33,20 @@ if (is_on_ground) {
     if (key_jump) {
         jump();
     }
-} else if (_wallSliding) {
-    _verticalSpeed = 3;
-    _timer = false;
-    reset_movement_abilities();
+} else {
+    if (_wallSliding) {
+        _verticalSpeed = _wallSlideSpeed;
+        _timer = false;
+        reset_movement_abilities();
+    }
     
-    if (key_jump) {
-        wall_jump();
+    if (next_to_wall()) {
+        if (key_jump) {
+            wall_jump();
+            _wallSliding = false;
+        }
+    } else {
+        _wallSliding = false;
     }
 }
 
@@ -60,8 +67,6 @@ if (_horizontalSpeed > 0) {
         if (!is_on_ground && _verticalSpeed >= 0) {
             _wallSliding = true;
         }
-    } else {
-        _wallSliding = false;
     }
 } else if (_horizontalSpeed < 0) {
     if (tilemap_get_at_pixel(_tileMap, bbox_left, bbox_top) != 0 || tilemap_get_at_pixel(_tileMap, bbox_left, bbox_bottom) != 0) {
@@ -72,8 +77,6 @@ if (_horizontalSpeed > 0) {
         if (!is_on_ground && _verticalSpeed >= 0) {
             _wallSliding = true;
         }
-    } else {
-        _wallSliding = false;
     }
 }
 
