@@ -7,8 +7,13 @@ _yScale = image_yscale;
 _prevY = 0;
 
 // Movement
-_maxHorizontalSpeed = 6;
 _directionFacing = DIRECTION.RIGHT;
+_maxHorizontalSpeed = 16;
+_dashLength = 15;
+_jumpHeight = -14;
+_doubleJumpAvailable = false;
+_wallSlideSpeed = 5;
+_wallSliding = false;
 
 // Life
 _maxHitPoints = 3;
@@ -23,13 +28,6 @@ _knockbackDuration = game_get_speed(gamespeed_fps) / 4;
 _cooldown = 0;
 _cooldownReset = 7;
 
-// Dashing
-_dashLength = 15;
-
-// Jumping
-_jumpHeight = -12;
-_doubleJumpAvailable = false;
-
 // Player state
 _state = PLAYER_STATES.DEFAULT;
 
@@ -40,7 +38,7 @@ enum PLAYER_STATES {
     FROZEN,     // 3
     DEAD,       // 4
     SLAM,       // 5
-    ATTACK      // 6
+    ATTACK     // 6
 };
 
 // Sprite lookup table

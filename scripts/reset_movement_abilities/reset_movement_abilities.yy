@@ -1,8 +1,8 @@
 {
-    "id": "e9f72378-1bd6-49aa-a8b2-12f79b8a5e70",
+    "id": "3e3816bf-293a-4ce0-9778-49ebf63adac8",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "tile_vcollision",
+    "name": "reset_movement_abilities",
     "IsCompatibility": false,
     "IsDnD": false
 }

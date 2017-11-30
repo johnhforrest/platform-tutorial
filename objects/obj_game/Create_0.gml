@@ -16,7 +16,10 @@ _pauseColor = make_color_rgb(5, 5, 5);
 // Player data
 _playerHitPoints = 0;
 _playerMaxHitPoints = 0;
-_abilities = array_create(ABILITIES.COUNT, -1);
+//_abilities = array_create(ABILITIES.COUNT, -1);
+
+// debug mode: activate all abilities
+_abilities = array_create(ABILITIES.COUNT, 1);
 
 // Particles
 _particleSystem = part_system_create_layer("Player", true);
@@ -47,6 +50,7 @@ enum ABILITIES
     NONE,
     DASH,
     DOUBLEJUMP,
+    WALLJUMP,
     COUNT
 };
 

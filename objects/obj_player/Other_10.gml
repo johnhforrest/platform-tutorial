@@ -10,7 +10,8 @@ if (obj_input._horizontalSum != 0 || obj_input._verticalSum != 0) {
 
 // Calculating horizontal movement
 if (obj_input._horizontalSum != 0) {
-    _horizontalSpeed = obj_input._horizontalSum * _walkSpeed * _acceleration;
+    var targetSpeed_ = obj_input._horizontalSum * _walkSpeed;
+    _horizontalSpeed = approach(_horizontalSpeed, targetSpeed_, _acceleration);
     _horizontalSpeed = clamp(_horizontalSpeed, -_maxHorizontalSpeed, _maxHorizontalSpeed);
 } else {
     _horizontalSpeed = approach(_horizontalSpeed, 0, _friction);
@@ -24,29 +25,61 @@ if (obj_game._abilities[ABILITIES.DOUBLEJUMP] == 1 && key_jump) {
 	obj_game._abilities[ABILITIES.DOUBLEJUMP] = 0;
 }
 
-if (set_is_on_ground(true)) {
-    // We are on the ground, reset jump state
-    if (obj_game._abilities[ABILITIES.DOUBLEJUMP] != -1) {
-    	obj_game._abilities[ABILITIES.DOUBLEJUMP] = 1;
-    }
-    
-    // We are on the ground, reset dash state
-    if (obj_game._abilities[ABILITIES.DASH] != -1) {
-        obj_game._abilities[ABILITIES.DASH] = 1;
-    }
+var is_on_ground = set_is_on_ground(true);
+if (is_on_ground) {
+    _wallSliding = false;
+    reset_movement_abilities();
     
     if (key_jump) {
         jump();
+    }
+} else {
+    if (_wallSliding) {
+        _verticalSpeed = _wallSlideSpeed;
+        _timer = false;
+        reset_movement_abilities();
+    }
+    
+    if (next_to_wall()) {
+        if (key_jump) {
+            wall_jump();
+            _wallSliding = false;
+        }
+    } else {
+        _wallSliding = false;
     }
 }
 
 // Stop increasing jump height if button is let go
 // This allows for precise platforming
 if (_verticalSpeed < 0 && !obj_input._jumpHeld) {
-    _verticalSpeed = max(_verticalSpeed, _jumpHeight / 4);
+    _verticalSpeed = max(_verticalSpeed, 0);
 }
 
-move_horizontally();
+// Move horizontally
+x += _horizontalSpeed;
+if (_horizontalSpeed > 0) {
+    if (tilemap_get_at_pixel(_tileMap, bbox_right, bbox_top) != 0 || tilemap_get_at_pixel(_tileMap, bbox_right, bbox_bottom) != 0) {
+        snap_to_hgrid(true);
+    
+        _horizontalSpeed = 0;
+        
+        if (!is_on_ground && _verticalSpeed >= 0) {
+            _wallSliding = true;
+        }
+    }
+} else if (_horizontalSpeed < 0) {
+    if (tilemap_get_at_pixel(_tileMap, bbox_left, bbox_top) != 0 || tilemap_get_at_pixel(_tileMap, bbox_left, bbox_bottom) != 0) {
+        snap_to_hgrid(false);
+    
+        _horizontalSpeed = 0;
+        
+        if (!is_on_ground && _verticalSpeed >= 0) {
+            _wallSliding = true;
+        }
+    }
+}
+
 move_vertically(0, true);
 set_sprite_scale();
 
